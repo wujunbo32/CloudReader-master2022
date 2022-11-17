@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="colorTheme">#ffce3d3a</color>
+    <color name="colorHomeToolBar">#000000</color>
+    <color name="colorToolBar">#181818</color>
+    <!--页面背景的颜色-->
+    <color name="color_page_bg">#000000</color>
+    <color name="color_tree_tab_bg">#181818</color>
+    <color name="color_sheet_bg">#181818</color>
+    <color name="color_gray_bg">#343434</color>
+
+    <color name="colorTabBgDefault">#000000</color>
+    <color name="colorWhite">#ffffffff</color>
+    <color name="colorSkeleton">#585858</color>
+    <color name="colorSwipeRefresh">#181818</color>
+    <color name="colorWhiteHalf">#bbffffff</color>
+
+    <!--主页tab背景-->
+    <color name="colorTabBg">#ffffffff</color>
+    <color name="colorTabTextCheck">#ffce3d3a</color>
+    <color name="colorTabTextNormal">#585858</color>
+    <color name="colorTabLine">#ffce3d3a</color>
+
+    <!--侧边栏分割线-->
+    <color name="colorNavLine">#1F1F1F</color>
+    <!--导航数据侧边栏背景色-->
+    <color name="colorNaviBg">#000000</color>
+
+
+    <!--分割线-->
+    <color name="colorLine">#1F1F1F</color>
+    <!--首页分割线-->
+    <color name="colorHomeLine">#1F1F1F</color>
+
+    <color name="colorLineDeep">#77ffffff</color>
+
+    <!--item的分割线-->
+    <color name="colorLineItem">#1F1F1F</color>
+
+    <!--tab标签栏文字的颜色-->
+    <color name="colorTabText">#585858</color>
+    <!--正文文字颜色-->
+    <color name="colorContent">#9e9e9e</color>
+    <!--水波纹或5.0以下选择器颜色-->
+    <color name="tabBackground">#777D7D7D</color>
+    <!--item的水波纹颜色-->
+    <color name="itemBackground">#DD7D7D7D</color>
+    <!--item的5.0一下版本选择器颜色-->
+    <color name="itemLowBackground">#d9d9d9</color>
+
+    <!--透明色-->
+    <color name="colorTransparent">#00000000</color>
+    <!--半透明-->
+    <color name="colorBanTransparent">#11000000</color>
+    <!--首页item文字颜色-->
+    <color name="colorSubtitle">#666666</color>
+
+    <color name="colorTitle">#999</color>
+    <!--谈红色  用于首页调整点击变色-->
+    <color name="colorSmallRed">#faebeb</color>
+
+    <!--电影评分-->
+    <color name="colorRateRed">#FB5B81</color>
+
+    <!--没有水波纹效果的颜色选择器-->
+    <color name="colorItemBackground">#d9d9d9</color>
+
+    <!--选择分类按下颜色-->
+    <color name="colorChoosePress">#777D7D7D</color>
+
+    <!--暂时用于反馈文字-->
+    <color name="text_common">#9e9e9e</color>
+
+    <color name="text_deed_bg">#181818</color>
+    <!--dialog的查看详情键-->
+    <color name="colorBtDialog">#38659C</color>
+    <!--banner和图片的蒙层-->
+    <color name="colorBannerMask">#50000000</color>
+    <!--banner指示器已选颜色-->
+    <color name="colorBannerSelect">#80ffffff</color>
+    <!--banner指示器未选颜色-->
+    <color name="colorBannerUnSelect">#20000000</color>
+    <!--dialog背景-->
+    <color name="colorDialogBg">#ff303030</color>
+</resources>
