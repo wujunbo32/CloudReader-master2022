@@ -1,0 +1,432 @@
+@startuml
+
+title __CLOUDREADER-MASTER.BYMVVM's Class Diagram__\n
+
+  namespace androidx.databinding {
+    interface androidx.databinding.DataBindingComponent {
+    }
+  }
+  
+
+  namespace androidx.databinding {
+    namespace library.baseAdapters {
+      class androidx.databinding.library.baseAdapters.BR {
+      }
+    }
+  }
+  
+
+  namespace com.bumptech.glide {
+    class com.bumptech.glide.GeneratedAppGlideModuleImpl {
+    }
+  }
+  
+
+  namespace com.bumptech.glide {
+    class com.bumptech.glide.GeneratedRequestManagerFactory {
+    }
+  }
+  
+
+  namespace me.jingbin.bymvvm {
+    class me.jingbin.bymvvm.BR {
+    }
+  }
+  
+
+  namespace me.jingbin.bymvvm {
+    class me.jingbin.bymvvm.BuildConfig {
+    }
+  }
+  
+
+  namespace me.jingbin.bymvvm {
+    class me.jingbin.bymvvm.DataBinderMapperImpl {
+    }
+  }
+  
+
+  namespace me.jingbin.bymvvm {
+    namespace adapter {
+      abstract class me.jingbin.bymvvm.adapter.BaseBindingAdapter {
+      }
+    }
+  }
+  
+
+  namespace me.jingbin.bymvvm {
+    namespace adapter {
+      abstract class me.jingbin.bymvvm.adapter.BaseBindingHolder {
+      }
+    }
+  }
+  
+
+  namespace me.jingbin.bymvvm {
+    namespace base {
+      abstract class me.jingbin.bymvvm.base.BaseActivity {
+      }
+    }
+  }
+  
+
+  namespace me.jingbin.bymvvm {
+    namespace base {
+      abstract class me.jingbin.bymvvm.base.BaseFragment {
+      }
+    }
+  }
+  
+
+  namespace me.jingbin.bymvvm {
+    namespace base {
+      class me.jingbin.bymvvm.base.BaseListViewModel {
+      }
+    }
+  }
+  
+
+  namespace me.jingbin.bymvvm {
+    namespace base {
+      class me.jingbin.bymvvm.base.BaseViewModel {
+      }
+    }
+  }
+  
+
+  namespace me.jingbin.bymvvm {
+    namespace base {
+      class me.jingbin.bymvvm.base.NoViewModel {
+      }
+    }
+  }
+  
+
+  namespace me.jingbin.bymvvm {
+    namespace base {
+      class me.jingbin.bymvvm.base.RootApplication {
+      }
+    }
+  }
+  
+
+  namespace me.jingbin.bymvvm {
+    namespace databinding {
+      class me.jingbin.bymvvm.databinding.ActivityBaseBindingImpl {
+      }
+    }
+  }
+  
+
+  namespace me.jingbin.bymvvm {
+    namespace databinding {
+      class me.jingbin.bymvvm.databinding.FragmentBaseBindingImpl {
+      }
+    }
+  }
+  
+
+  namespace me.jingbin.bymvvm {
+    namespace databinding {
+      class me.jingbin.bymvvm.databinding.LayoutLoadingEmptyBindingImpl {
+      }
+    }
+  }
+  
+
+  namespace me.jingbin.bymvvm {
+    namespace http {
+      class me.jingbin.bymvvm.http.HttpUtils {
+      }
+    }
+  }
+  
+
+  namespace me.jingbin.bymvvm {
+    namespace http {
+      class me.jingbin.bymvvm.http.NullOnEmptyConverterFactory {
+      }
+    }
+  }
+  
+
+  namespace me.jingbin.bymvvm {
+    namespace http {
+      interface me.jingbin.bymvvm.http.ParamNames {
+      }
+    }
+  }
+  
+
+  namespace me.jingbin.bymvvm {
+    namespace http {
+      namespace glide {
+        class me.jingbin.bymvvm.http.glide.GlideApp {
+        }
+      }
+    }
+  }
+  
+
+  namespace me.jingbin.bymvvm {
+    namespace http {
+      namespace glide {
+        class me.jingbin.bymvvm.http.glide.GlideOptions {
+        }
+      }
+    }
+  }
+  
+
+  namespace me.jingbin.bymvvm {
+    namespace http {
+      namespace glide {
+        class me.jingbin.bymvvm.http.glide.GlideRequest {
+        }
+      }
+    }
+  }
+  
+
+  namespace me.jingbin.bymvvm {
+    namespace http {
+      namespace glide {
+        class me.jingbin.bymvvm.http.glide.GlideRequests {
+        }
+      }
+    }
+  }
+  
+
+  namespace me.jingbin.bymvvm {
+    namespace http {
+      namespace glide {
+        class me.jingbin.bymvvm.http.glide.OkHttpGlideModule {
+        }
+      }
+    }
+  }
+  
+
+  namespace me.jingbin.bymvvm {
+    namespace http {
+      namespace glide {
+        class me.jingbin.bymvvm.http.glide.OkHttpStreamFetcher {
+        }
+      }
+    }
+  }
+  
+
+  namespace me.jingbin.bymvvm {
+    namespace http {
+      namespace glide {
+        class me.jingbin.bymvvm.http.glide.OkHttpUrlLoader {
+        }
+      }
+    }
+  }
+  
+
+  namespace me.jingbin.bymvvm {
+    namespace http {
+      namespace glide {
+        class me.jingbin.bymvvm.http.glide.SSLSocketClient {
+        }
+      }
+    }
+  }
+  
+
+  namespace me.jingbin.bymvvm {
+    namespace room {
+      class me.jingbin.bymvvm.room.AppExecutors {
+      }
+    }
+  }
+  
+
+  namespace me.jingbin.bymvvm {
+    namespace room {
+      class me.jingbin.bymvvm.room.DiskIOThreadExecutor {
+      }
+    }
+  }
+  
+
+  namespace me.jingbin.bymvvm {
+    namespace room {
+      class me.jingbin.bymvvm.room.Injection {
+      }
+    }
+  }
+  
+
+  namespace me.jingbin.bymvvm {
+    namespace room {
+      class me.jingbin.bymvvm.room.User {
+      }
+    }
+  }
+  
+
+  namespace me.jingbin.bymvvm {
+    namespace room {
+      interface me.jingbin.bymvvm.room.UserDao {
+      }
+    }
+  }
+  
+
+  namespace me.jingbin.bymvvm {
+    namespace room {
+      class me.jingbin.bymvvm.room.UserDao_Impl {
+      }
+    }
+  }
+  
+
+  namespace me.jingbin.bymvvm {
+    namespace room {
+      abstract class me.jingbin.bymvvm.room.UserDataBase {
+      }
+    }
+  }
+  
+
+  namespace me.jingbin.bymvvm {
+    namespace room {
+      class me.jingbin.bymvvm.room.UserDataBaseSource {
+      }
+    }
+  }
+  
+
+  namespace me.jingbin.bymvvm {
+    namespace room {
+      class me.jingbin.bymvvm.room.UserDataBase_Impl {
+      }
+    }
+  }
+  
+
+  namespace me.jingbin.bymvvm {
+    namespace room {
+      interface me.jingbin.bymvvm.room.UserDataCallback {
+      }
+    }
+  }
+  
+
+  namespace me.jingbin.bymvvm {
+    namespace rxbus {
+      class me.jingbin.bymvvm.rxbus.RxBus {
+      }
+    }
+  }
+  
+
+  namespace me.jingbin.bymvvm {
+    namespace rxbus {
+      class me.jingbin.bymvvm.rxbus.RxBusBaseMessage {
+      }
+    }
+  }
+  
+
+  namespace me.jingbin.bymvvm {
+    namespace utils {
+      class me.jingbin.bymvvm.utils.BuildFactory {
+      }
+    }
+  }
+  
+
+  namespace me.jingbin.bymvvm {
+    namespace utils {
+      class me.jingbin.bymvvm.utils.CheckNetwork {
+      }
+    }
+  }
+  
+
+  namespace me.jingbin.bymvvm {
+    namespace utils {
+      class me.jingbin.bymvvm.utils.ClassUtil {
+      }
+    }
+  }
+  
+
+  namespace me.jingbin.bymvvm {
+    namespace utils {
+      class me.jingbin.bymvvm.utils.CommonUtils {
+      }
+    }
+  }
+  
+
+  namespace me.jingbin.bymvvm {
+    namespace utils {
+      class me.jingbin.bymvvm.utils.StatusBarUtil {
+      }
+    }
+  }
+  
+
+  namespace me.jingbin.bymvvm {
+    namespace utils {
+      class me.jingbin.bymvvm.utils.StatusBarView {
+      }
+    }
+  }
+  
+
+  com.bumptech.glide.GeneratedAppGlideModuleImpl -up-|> com.bumptech.glide.GeneratedAppGlideModule
+  com.bumptech.glide.GeneratedAppGlideModuleImpl o-- me.jingbin.bymvvm.http.glide.OkHttpGlideModule : appGlideModule
+  com.bumptech.glide.GeneratedRequestManagerFactory .up.|> com.bumptech.glide.manager.RequestManagerRetriever.RequestManagerFactory
+  me.jingbin.bymvvm.DataBinderMapperImpl -up-|> androidx.databinding.DataBinderMapper
+  me.jingbin.bymvvm.adapter.BaseBindingAdapter -up-|> me.jingbin.library.adapter.BaseByRecyclerViewAdapter
+  me.jingbin.bymvvm.adapter.BaseBindingHolder -up-|> me.jingbin.library.adapter.BaseByViewHolder
+  me.jingbin.bymvvm.adapter.BaseBindingHolder o-- B : binding
+  me.jingbin.bymvvm.base.BaseActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  me.jingbin.bymvvm.base.BaseActivity o-- SV : bindingView
+  me.jingbin.bymvvm.base.BaseActivity o-- VM : viewModel
+  me.jingbin.bymvvm.base.BaseActivity o-- me.jingbin.bymvvm.databinding.ActivityBaseBinding : mBaseBinding
+  me.jingbin.bymvvm.base.BaseFragment -up-|> androidx.fragment.app.Fragment
+  me.jingbin.bymvvm.base.BaseFragment o-- SV : bindingView
+  me.jingbin.bymvvm.base.BaseFragment o-- VM : viewModel
+  me.jingbin.bymvvm.base.BaseListViewModel -up-|> me.jingbin.bymvvm.base.BaseViewModel
+  me.jingbin.bymvvm.base.BaseViewModel -up-|> androidx.lifecycle.AndroidViewModel
+  me.jingbin.bymvvm.base.NoViewModel -up-|> androidx.lifecycle.AndroidViewModel
+  me.jingbin.bymvvm.base.RootApplication -up-|> android.app.Application
+  me.jingbin.bymvvm.databinding.ActivityBaseBindingImpl -up-|> me.jingbin.bymvvm.databinding.ActivityBaseBinding
+  me.jingbin.bymvvm.databinding.FragmentBaseBindingImpl -up-|> me.jingbin.bymvvm.databinding.FragmentBaseBinding
+  me.jingbin.bymvvm.databinding.LayoutLoadingEmptyBindingImpl -up-|> me.jingbin.bymvvm.databinding.LayoutLoadingEmptyBinding
+  me.jingbin.bymvvm.http.NullOnEmptyConverterFactory -up-|> retrofit2.Converter.Factory
+  me.jingbin.bymvvm.http.glide.GlideOptions .up.|> java.lang.Cloneable
+  me.jingbin.bymvvm.http.glide.GlideOptions -up-|> com.bumptech.glide.request.RequestOptions
+  me.jingbin.bymvvm.http.glide.GlideRequest .up.|> java.lang.Cloneable
+  me.jingbin.bymvvm.http.glide.GlideRequest -up-|> com.bumptech.glide.RequestBuilder
+  me.jingbin.bymvvm.http.glide.GlideRequests -up-|> com.bumptech.glide.RequestManager
+  me.jingbin.bymvvm.http.glide.OkHttpGlideModule -up-|> com.bumptech.glide.module.AppGlideModule
+  me.jingbin.bymvvm.http.glide.OkHttpStreamFetcher .up.|> com.bumptech.glide.load.data.DataFetcher
+  me.jingbin.bymvvm.http.glide.OkHttpUrlLoader .up.|> com.bumptech.glide.load.model.ModelLoader
+  me.jingbin.bymvvm.room.DiskIOThreadExecutor .up.|> java.util.concurrent.Executor
+  me.jingbin.bymvvm.room.UserDao_Impl .up.|> me.jingbin.bymvvm.room.UserDao
+  me.jingbin.bymvvm.room.UserDataBase -up-|> androidx.room.RoomDatabase
+  me.jingbin.bymvvm.room.UserDataBaseSource o-- me.jingbin.bymvvm.room.AppExecutors : mAppExecutors
+  me.jingbin.bymvvm.room.UserDataBaseSource o-- me.jingbin.bymvvm.room.UserDao : mUserDao
+  me.jingbin.bymvvm.room.UserDataBase_Impl -up-|> me.jingbin.bymvvm.room.UserDataBase
+  me.jingbin.bymvvm.room.UserDataBase_Impl o-- me.jingbin.bymvvm.room.UserDao : _userDao
+  me.jingbin.bymvvm.utils.StatusBarView -up-|> android.view.View
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

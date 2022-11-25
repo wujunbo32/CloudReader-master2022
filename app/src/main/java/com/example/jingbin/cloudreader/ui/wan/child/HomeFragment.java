@@ -47,12 +47,12 @@ public class HomeFragment extends BaseFragment<WanAndroidListViewModel, Fragment
 
     private boolean mIsFirst = true;
     private WanAndroidAdapter mAdapter;
-    private HeaderWanAndroidBinding headerBinding;
+    private HeaderWanAndroidBinding headerBinding;   // banner 和 RadioGroup组成  header_wan_android.xml
     private boolean isLoadBanner = false;
     // banner图的宽
     private int width;
     private FragmentActivity activity;
-    private ByRVItemSkeletonScreen skeletonScreen;
+    private ByRVItemSkeletonScreen skeletonScreen;  // 骨架图
 
     @Override
     public void onAttach(Context context) {
@@ -62,7 +62,7 @@ public class HomeFragment extends BaseFragment<WanAndroidListViewModel, Fragment
 
     @Override
     public int setContent() {
-        return R.layout.fragment_wan_android;
+        return R.layout.fragment_wan_android;  // SwipeRefreshLayout刷新  和 ByRecyclerView
     }
 
     public static HomeFragment newInstance() {
@@ -72,27 +72,27 @@ public class HomeFragment extends BaseFragment<WanAndroidListViewModel, Fragment
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        showContentView();
-        initRefreshView();
+        showContentView();//显示加载完成的状态
+        initRefreshView();// 布局合成、上下拉设置
 
-        loadData();
+        loadData();   // 空方法吗 TODO problem
     }
 
     private void initRefreshView() {
-        RefreshHelper.initLinear(bindingView.xrvWan, true, 1);
-        RefreshHelper.setSwipeRefreshView(bindingView.srlWan);
-        headerBinding = DataBindingUtil.inflate(getLayoutInflater(), R.layout.header_wan_android, (ViewGroup) bindingView.xrvWan.getParent(), false);
+        RefreshHelper.initLinear(bindingView.xrvWan, true, 1);  //ByRecyclerView
+        RefreshHelper.setSwipeRefreshView(bindingView.srlWan);  //SwipeRefreshLayout
+        headerBinding = DataBindingUtil.inflate(getLayoutInflater(), R.layout.header_wan_android, (ViewGroup) bindingView.xrvWan.getParent(), false); // true 和 false 看不到差别， addView有没有用 TODO problem
         mAdapter = new WanAndroidAdapter(getActivity());
-        mAdapter.setNoImage(true);
-        bindingView.xrvWan.addHeaderView(headerBinding.getRoot());
+        mAdapter.setNoImage(true);   // 没图片子项
+        bindingView.xrvWan.addHeaderView(headerBinding.getRoot());   //头    banner、RadioGroup
         width = DensityUtil.getDisplayWidth() - DensityUtil.dip2px(bindingView.xrvWan.getContext(), 160);
         float height = width / 1.8f;
         RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (int) height);
-        headerBinding.banner.setLayoutParams(lp);
+        headerBinding.banner.setLayoutParams(lp);   // 设置banner宽高参数
         headerBinding.rb1.setOnCheckedChangeListener((buttonView, isChecked) -> refresh(isChecked, true));
         headerBinding.rb2.setOnCheckedChangeListener((buttonView, isChecked) -> refresh(isChecked, false));
-        bindingView.srlWan.setOnRefreshListener(this::swipeRefresh);
-        bindingView.xrvWan.setOnLoadMoreListener(true, new ByRecyclerView.OnLoadMoreListener() {
+        bindingView.srlWan.setOnRefreshListener(this::swipeRefresh);   // 下拉刷新 TODO  :: 什么意思
+        bindingView.xrvWan.setOnLoadMoreListener(true, new ByRecyclerView.OnLoadMoreListener() {  // 加载更多
             @Override
             public void onLoadMore() {
                 if (!bindingView.srlWan.isRefreshing()) {
@@ -109,16 +109,17 @@ public class HomeFragment extends BaseFragment<WanAndroidListViewModel, Fragment
             }
         });
 
-        showSkeletonView();
+        showSkeletonView();  // 骨架图
     }
 
+    // 骨架图
     private void showSkeletonView() {
         ArrayList<WanAndroidBannerBean.DataBean> dataBeans = new ArrayList<>();
         WanAndroidBannerBean.DataBean dataBean = new WanAndroidBannerBean.DataBean();
         dataBeans.add(dataBean);
         dataBeans.add(dataBean);
         dataBeans.add(dataBean);
-        showBannerView(dataBeans);
+        showBannerView(dataBeans);   // banner
         skeletonScreen = BySkeleton.bindItem(bindingView.xrvWan)
                 .adapter(mAdapter)
                 .count(10)
@@ -129,6 +130,7 @@ public class HomeFragment extends BaseFragment<WanAndroidListViewModel, Fragment
                 .show();
     }
 
+    // 刷新
     private void refresh(boolean isChecked, boolean isArticle) {
         if (isChecked) {
             bindingView.srlWan.setRefreshing(true);
@@ -146,7 +148,7 @@ public class HomeFragment extends BaseFragment<WanAndroidListViewModel, Fragment
      * 下拉刷新
      */
     private void swipeRefresh() {
-        bindingView.srlWan.postDelayed(this::getWanAndroidBanner, 350);
+        bindingView.srlWan.postDelayed(this::getWanAndroidBanner, 350);  // postDelayed 不是要传Runnable吗  TODO problem
     }
 
     /**
@@ -156,22 +158,23 @@ public class HomeFragment extends BaseFragment<WanAndroidListViewModel, Fragment
         if (!isLoadBanner) {
             headerBinding.banner
                     .setIndicatorRes(R.drawable.shape_banner_select, R.drawable.shape_banner_unselect)
-                    .setBannerStyle(BannerConfig.NOT_INDICATOR)
+                    .setBannerStyle(BannerConfig.NOT_INDICATOR)   // 好像没效果
                     .setBannerAnimation(ScaleRightTransformer.class)
-                    .setDelayTime(6000)
-                    .setOffscreenPageLimit(result.size())
+                    .setDelayTime(2000)
+                    .setOffscreenPageLimit(result.size()) //
                     .setAutoPlay(false)
-                    .setPages(result, CustomViewHolder::new)
+                    .setPages(result, CustomViewHolder::new)   // new 属于类吧   TODO problem
                     .start();
             headerBinding.banner.setOnBannerClickListener(i -> WebViewActivity.loadUrl(getContext(), result.get(i).getUrl(), result.get(i).getTitle()));
             headerBinding.banner.startAutoPlay();
             isLoadBanner = true;
         } else {
-            headerBinding.banner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR).setAutoPlay(true);
+            headerBinding.banner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR).setAutoPlay(true); //
             headerBinding.banner.update(result);
         }
     }
 
+    // banner 的 ViewHodler
     class CustomViewHolder implements ByBannerViewHolder<WanAndroidBannerBean.DataBean> {
 
         private ImageView imageView;
@@ -190,7 +193,7 @@ public class HomeFragment extends BaseFragment<WanAndroidListViewModel, Fragment
             if (data != null) {
                 DensityUtil.setWidthHeight(imageView, width, 1.8f);
                 DensityUtil.setWidthHeight(viewMask, width, 1.8f);
-                GlideUtil.displayEspImage(data.getImagePath(), imageView, 3);
+                GlideUtil.displayEspImage(data.getImagePath(), imageView, 3);  // 不懂 TODO problem
             }
         }
     }
@@ -202,6 +205,7 @@ public class HomeFragment extends BaseFragment<WanAndroidListViewModel, Fragment
             bindingView.srlWan.postDelayed(this::getWanAndroidBanner, 1000);
             mIsFirst = false;
         }
+//         开启banner
         if (isLoadBanner) {
             headerBinding.banner.startAutoPlay();
         }
@@ -217,29 +221,29 @@ public class HomeFragment extends BaseFragment<WanAndroidListViewModel, Fragment
     }
 
     public void getWanAndroidBanner() {
-        viewModel.setPage(0);
+        viewModel.setPage(0);   //
         viewModel.getWanAndroidBanner().observe(this, new Observer<WanAndroidBannerBean>() {
             @Override
             public void onChanged(@Nullable WanAndroidBannerBean bean) {
                 if (bean != null) {
                     headerBinding.banner.setVisibility(View.VISIBLE);
-                    showBannerView(bean.getData());
+                    showBannerView(bean.getData());   // banner
                 } else {
                     headerBinding.banner.setVisibility(View.GONE);
                 }
                 if (headerBinding.rb1.isChecked()) {
-                    getHomeArticleList();
+                    getHomeArticleList();//最新博文
                 } else {
-                    getHomeProjectList();
+                    getHomeProjectList();// 最新项目
                 }
             }
         });
     }
-
+    //最新博文
     private void getHomeArticleList() {
         viewModel.getHomeArticleList(null).observe(getViewLifecycleOwner(), observer);
     }
-
+    // 最新项目
     private void getHomeProjectList() {
         viewModel.getHomeProjectList().observe(getViewLifecycleOwner(), observer);
     }

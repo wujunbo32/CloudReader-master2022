@@ -82,13 +82,13 @@ public class HttpUtils {
     }
 
     public Retrofit.Builder getBuilder(String apiUrl) {
-        Retrofit.Builder builder = new Retrofit.Builder();
-        builder.client(getOkClient());
+        Retrofit.Builder builder = new Retrofit.Builder();  // 创建对象
+        builder.client(getOkClient());  // getUnsafeOkHttpClient()做了好多设置
         builder.baseUrl(apiUrl);// 设置远程地址
-        builder.addConverterFactory(new NullOnEmptyConverterFactory());
-        builder.addConverterFactory(GsonConverterFactory.create(getGson()));
-        builder.addCallAdapterFactory(RxJava2CallAdapterFactory.create());
-        return builder;
+        builder.addConverterFactory(new NullOnEmptyConverterFactory());  // TODO problem
+        builder.addConverterFactory(GsonConverterFactory.create(getGson()));// 设置数据解析器  使用时需要在Gradle添加依赖
+        builder.addCallAdapterFactory(RxJava2CallAdapterFactory.create());  // 支持RxJava平台  如果使用是 Android 默认的 CallAdapter，则不需要在Gradle添加依赖
+        return builder;                                                     // // 把Retrofit请求转化成RxJava的Observable
     }
 
 
@@ -112,6 +112,7 @@ public class HttpUtils {
         }
     }
 
+    // 你封个毛呀，搞这么多层  还getOkClient（）来调用
     private OkHttpClient getUnsafeOkHttpClient() {
         try {
             // Install the all-trusting trust manager TLS
@@ -130,10 +131,10 @@ public class HttpUtils {
             okBuilder.connectTimeout(30, TimeUnit.SECONDS);
             okBuilder.writeTimeout(30, TimeUnit.SECONDS);
             okBuilder.addInterceptor(new HttpHeadInterceptor());
-            // 持久化cookie
+            // 持久化cookie   TODO
             okBuilder.addInterceptor(new ReceivedCookiesInterceptor(context));
             okBuilder.addInterceptor(new AddCookiesInterceptor(context));
-            // 添加缓存，无网访问时会拿缓存,只会缓存get请求
+            // 添加缓存，无网访问时会拿缓存,只会缓存get请求   TODO  没看懂
             okBuilder.addInterceptor(new AddCacheInterceptor(context));
             okBuilder.cache(cache);
             okBuilder.addInterceptor(new HttpLoggingInterceptor()

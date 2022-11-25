@@ -27,12 +27,13 @@ public class BaseViewModel extends AndroidViewModel {
     }
 
 
-    protected <T> void execute(Observable<T> observable, Observer<T> observer) {
-        observable
-                .throttleFirst(500, TimeUnit.MILLISECONDS)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(observer);
+    protected <T> void execute(Observable<T> observable, Observer<T> observer) {// 什么意思 TODO
+        //MainViewModel中有观察者方法实现
+        observable  // 被观察者
+                .throttleFirst(500, TimeUnit.MILLISECONDS)  // throttleFirst :在某段时间内，只发送该段时间内第1次事件(假如一个按钮1秒内点了3次 ,第一次显示,后2次不显示)
+                .subscribeOn(Schedulers.io())  // // 订阅触发后，在子线程中进行请求
+                .observeOn(AndroidSchedulers.mainThread()) // 在UI线程中暗中观察并及时消费
+                .subscribe(observer);  // // 默认最先调用复写的 onSubscribe（）
     }
 
     protected void addDisposable(Disposable disposable) {

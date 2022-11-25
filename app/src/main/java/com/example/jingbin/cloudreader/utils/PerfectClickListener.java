@@ -6,7 +6,7 @@ import android.view.View.OnClickListener;
 import java.util.Calendar;
 
 /**
- * 避免在1秒内出发多次点击
+ * 避免在1秒内出发多次点击  //TODO problem 不懂
  */
 public abstract class PerfectClickListener implements OnClickListener {
     public static final int MIN_CLICK_DELAY_TIME = 1000;

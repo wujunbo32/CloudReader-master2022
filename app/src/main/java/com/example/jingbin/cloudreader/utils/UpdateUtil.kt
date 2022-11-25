@@ -23,7 +23,7 @@ class UpdateUtil {
          * @param isShowToast 是否弹出更新框
          */
         @JvmStatic
-        fun check(activity: BaseActivity<*, *>?, isShowToast: Boolean) {
+        fun check(activity: BaseActivity<*, *>?, isShowToast: Boolean) {  // BaseActivity<*, *> 什么意思 TODO problem
             if (activity == null) {
                 return
             }

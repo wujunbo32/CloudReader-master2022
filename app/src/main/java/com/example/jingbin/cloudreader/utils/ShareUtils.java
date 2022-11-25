@@ -42,9 +42,9 @@ public class ShareUtils {
         intent.setType("text/plain");
         intent.putExtra(Intent.EXTRA_SUBJECT, context.getString(R.string.action_share));
         intent.putExtra(Intent.EXTRA_TEXT, extraText);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);// TODO problem
         context.startActivity(
-                Intent.createChooser(intent, context.getString(R.string.action_share)));
+                Intent.createChooser(intent, context.getString(R.string.action_share)));// TODO problem
     }
 
     /**

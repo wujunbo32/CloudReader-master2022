@@ -33,53 +33,55 @@ class SquareFragment : BaseFragment<WanCenterViewModel, FragmentSquareBinding>()
         }
     }
 
+    /*周期方法*/
     override fun onAttach(context: Context) {
         super.onAttach(context)
         activity = context as Activity
 
     }
-
+    /*周期方法*/
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel.mPage = 0
     }
-
+    /*周期方法*/
     override fun onResume() {
         super.onResume()
         if (isFirst) {
-            showLoading()
-            initRv()
-            getWendaData()
+            showLoading()  //显示加载中状态
+            initRv()  // 上下拉 悬浮按钮
+            getWendaData()  // 获取广场列表数据
             initRxBus()
-            isFirst = false
+            isFirst = false    // 只执行一次
         }
     }
 
     private fun initRv() {
         RefreshHelper.initLinear(bindingView.xrvAndroid, true, 1)
-        mAdapter = WanAndroidAdapter(activity)
-        mAdapter.isNoShowChapterName = true
-        mAdapter.isNoImage = false
-        bindingView.xrvAndroid.adapter = mAdapter
+        mAdapter = WanAndroidAdapter(activity)   // 通用的列表子项的操作
+        mAdapter.isNoShowChapterName = true    // 不显示类别信息
+        mAdapter.isNoImage = false    // 列表中是否显示图片
+        bindingView.xrvAndroid.adapter = mAdapter   // TODO 为什么可以 .adapter
         bindingView.xrvAndroid.setOnRefreshListener {
-            viewModel.mPage = 0
+            viewModel.mPage = 0     // 下拉刷新都是加载最新的
             getWendaData()
         }
-        bindingView.xrvAndroid.setOnLoadMoreListener(true) {
+        bindingView.xrvAndroid.setOnLoadMoreListener(true) { // 下拉更多
             ++viewModel.mPage
             getWendaData()
         }
-        bindingView.tvPublish.setOnClickListener {
+        bindingView.tvPublish.setOnClickListener {   //分享悬浮按钮
             if (UserUtil.isLogin(activity)) {
                 PublishActivity.start(activity)
             }
         }
     }
 
+    /*获取广场列表数据*/
     private fun getWendaData() {
         viewModel.getUserArticleList().observe(this, Observer {
             bindingView.xrvAndroid.isRefreshing = false
-            if (it != null && it.isNotEmpty()) {
+            if (it != null && it.isNotEmpty()) {   //有数据 it 代表 List<ArticlesBean>
                 showContentView()
                 if (viewModel.mPage == 0) {
                     mAdapter.setNewData(it)
@@ -89,7 +91,7 @@ class SquareFragment : BaseFragment<WanCenterViewModel, FragmentSquareBinding>()
                 }
 
             } else {
-                if (viewModel.mPage == 0) {
+                if (viewModel.mPage == 0) {  // 不为null,但没有数据
                     if (it != null) {
                         showEmptyView("没找到广场里的内容~")
                     } else {
@@ -97,7 +99,7 @@ class SquareFragment : BaseFragment<WanCenterViewModel, FragmentSquareBinding>()
                         if (viewModel.mPage > 1) viewModel.mPage--
                     }
                 } else {
-                    bindingView.xrvAndroid.loadMoreEnd()
+                    bindingView.xrvAndroid.loadMoreEnd()   // TODO
                 }
             }
         })

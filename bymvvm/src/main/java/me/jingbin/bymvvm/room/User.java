@@ -26,7 +26,7 @@ public class User {
     @ColumnInfo(name = "id")
     private int id;
 
-    @ColumnInfo(name = "email")
+    @ColumnInfo(name = "email")    // 这里用到了room组件
     private String email;
     @ColumnInfo(name = "icon")
     private String icon;

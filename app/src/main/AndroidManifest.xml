@@ -51,6 +51,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/MyScrollPage"
             tools:ignore="LockedOrientationActivity" />
+<!--配置中的android:screenOrientation="portrait"全部变红 加-tools:ignore="LockedOrientationActivity"-->
         <activity
             android:name=".ui.LoadingActivity"
             android:screenOrientation="portrait"

@@ -5,6 +5,14 @@ import androidx.databinding.Bindable;
 
 import com.example.jingbin.cloudreader.BR;
 
+/**
+ * @description 积分系统
+ * @param 
+ * @return 
+ * @author 菠菜
+ * @time 2022/11/23 20:51
+ */
+
 public class CoinUserInfoBean extends BaseObservable {
 
     /**

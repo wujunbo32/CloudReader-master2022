@@ -38,6 +38,7 @@ public class GlideUtil {
                 .into(imageView);
     }
 
+
     private static int getMusicDefaultPic(int imgNumber) {
         switch (imgNumber) {
             case 1:
@@ -79,7 +80,7 @@ public class GlideUtil {
      * GlideApp 干货api 忽略图片https证书验证
      */
     public static void displayEspImage(String url, ImageView imageView, int type) {
-        GlideApp.with(imageView.getContext())
+        GlideApp.with(imageView.getContext())   // GlideApp TODO 怎么是生成的 problem
                 .load(url)
                 .transition(DrawableTransitionOptions.withCrossFade(500))
                 .placeholder(CommonUtils.getDrawable(imageView.getContext(), getDefaultPic(type)))

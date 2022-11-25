@@ -25,13 +25,14 @@ public class NavHomePageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         // 4.4 标题透明
         StatusBarUtil.setTranslucentStatus(this);
-        ActivityNavHomePageBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_nav_home_page);
+        ActivityNavHomePageBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_nav_home_page);  // 项目主页
         // 解决7.0以上系统 滑动到顶部 标题裁减一半的问题
 //        setSupportActionBar(binding.detailToolbar);
-        ToolbarHelper.initFullBar(binding.detailToolbar, this);
+        ToolbarHelper.initFullBar(binding.detailToolbar, this);  // TODO 不太懂 problem
 //        binding.detailToolbar.setNavigationIcon(null);
-        binding.detailToolbar.setNavigationOnClickListener(v -> finish());
+        binding.detailToolbar.setNavigationOnClickListener(v -> finish());  // 返回键
 
+        // 跳转到网页FloatingActionButton
         binding.fabShare.setOnClickListener(v -> WebViewActivity.loadUrl(v.getContext(), CommonUtils.getString(R.string.string_url_cloudreader), "CloudReader"));
     }
 

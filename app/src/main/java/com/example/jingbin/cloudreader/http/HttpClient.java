@@ -153,13 +153,14 @@ public interface HttpClient {
 
     /**
      * 玩安卓轮播图
+     * https://www.wanandroid.com/banner/json
      */
     @GET("banner/json")
     Observable<WanAndroidBannerBean> getWanAndroidBanner();
 
     /**
      * 玩安卓，文章列表、知识体系下的文章
-     *
+     * https://www.wanandroid.com/article/list/0/json    // 首页  最新博文内容
      * @param page 页码，从0开始
      * @param cid  体系id
      */
@@ -168,7 +169,7 @@ public interface HttpClient {
 
     /**
      * 玩安卓登录
-     *
+     * https://www.wanandroid.com/user/login   // 有cookie返回
      * @param username 用户名
      * @param password 密码
      */
@@ -178,6 +179,7 @@ public interface HttpClient {
 
     /**
      * 玩安卓注册
+     * https://www.wanandroid.com/user/register
      */
     @FormUrlEncoded
     @POST("user/register")
@@ -185,6 +187,9 @@ public interface HttpClient {
 
     /**
      * 退出
+     * https://www.wanandroid.com/user/logout/json   //客户端清除cookie
+     *
+     * TODO Flowable<LoginBean> 什么意思    被观察者， 背压
      */
     @GET("user/logout/json")
     Flowable<LoginBean> logout();
@@ -192,7 +197,8 @@ public interface HttpClient {
 
     /**
      * 收藏文章列表
-     *
+     * https://www.wanandroid.com/lg/collect/list/0/json
+     * 注：该接口支持传入 page_size 控制分页数量，取值为[1-40]，不传则使用默认值，一旦传入了 page_size，后续该接口分页都需要带上，否则会造成分页读取错误
      * @param page 页码
      */
     @GET("lg/collect/list/{page}/json")
@@ -200,7 +206,7 @@ public interface HttpClient {
 
     /**
      * 收藏本站文章，errorCode返回0为成功
-     *
+     * https://www.wanandroid.com/lg/collect/1165/json
      * @param id 文章id
      */
     @POST("lg/collect/{id}/json")
@@ -228,13 +234,14 @@ public interface HttpClient {
 
     /**
      * 体系数据
+     * 第二个图标 体系
      */
     @GET("tree/json")
     Observable<TreeBean> getTree();
 
     /**
      * 收藏网址
-     *
+     * 我的收藏中有个网页标签
      * @param name 标题
      * @param link 链接
      */

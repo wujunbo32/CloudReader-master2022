@@ -34,9 +34,9 @@ public class NavAboutActivity extends BaseActivity<NoViewModel, ActivityNavAbout
         bindingView.tvVersionName.setText("当前版本 V" + BuildConfig.VERSION_NAME);
 
 
-        // 直接写在布局文件里会很耗内存
+        // 直接写在布局文件里会很耗内存  为什么要加抗锯齿 TODO problem
         Glide.with(this).load(R.drawable.ic_cloudreader).into(bindingView.ivIcon);
-        bindingView.tvGankio.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG);
+        bindingView.tvGankio.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG);  //画一个下划线
         bindingView.tvGankio.getPaint().setAntiAlias(true);//抗锯齿
         bindingView.tvDouban.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG);
         bindingView.tvDouban.getPaint().setAntiAlias(true);//抗锯齿
@@ -57,7 +57,7 @@ public class NavAboutActivity extends BaseActivity<NoViewModel, ActivityNavAbout
 
         // 酷安评分鼓励
         if (BaseTools.hasPackage(this, "com.coolapk.market")) {
-            bindingView.lineRate.setVisibility(View.VISIBLE);
+            bindingView.lineRate.setVisibility(View.VISIBLE);   // 有这个软件才显示
             bindingView.tvAboutRate.setVisibility(View.VISIBLE);
             bindingView.tvAboutRate.setOnClickListener(v -> BaseTools.launchAppDetail(NavAboutActivity.this, getPackageName(), "com.coolapk.market"));
         }

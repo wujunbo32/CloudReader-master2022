@@ -64,7 +64,7 @@ public abstract class BaseFragment<VM extends AndroidViewModel, SV extends ViewD
         RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         bindingView.getRoot().setLayoutParams(params);
         RelativeLayout mContainer = inflate.findViewById(R.id.container);
-        mContainer.addView(bindingView.getRoot());
+        mContainer.addView(bindingView.getRoot());  //添加组合布局
         bindingView.getRoot().setVisibility(View.GONE);
         return inflate;
     }
@@ -88,6 +88,7 @@ public abstract class BaseFragment<VM extends AndroidViewModel, SV extends ViewD
     }
 
     /**
+     * TODO problem
      * 显示时加载数据,需要这样的使用
      * 注意声明 isPrepared，先初始化
      * 生命周期会先执行 setUserVisibleHint 再执行onActivityCreated

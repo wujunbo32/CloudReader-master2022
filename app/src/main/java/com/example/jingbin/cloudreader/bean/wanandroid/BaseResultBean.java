@@ -5,6 +5,7 @@ import androidx.databinding.Bindable;
 
 import com.example.jingbin.cloudreader.BR;
 
+/*组合了数据 */
 public class BaseResultBean<T> extends BaseObservable {
 
     private T data;

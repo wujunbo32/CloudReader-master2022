@@ -4,6 +4,7 @@ import android.app.Application;
 import androidx.lifecycle.MutableLiveData;
 import androidx.annotation.NonNull;
 
+import io.reactivex.functions.Action;
 import me.jingbin.bymvvm.base.BaseListViewModel;
 import com.example.jingbin.cloudreader.bean.wanandroid.HomeListBean;
 import com.example.jingbin.cloudreader.bean.wanandroid.WanAndroidBannerBean;
@@ -27,11 +28,15 @@ public class WanAndroidListViewModel extends BaseListViewModel {
         super(application);
     }
 
+    /**
+     * 玩安卓轮播图
+     * https://www.wanandroid.com/banner/json
+     */
     public MutableLiveData<WanAndroidBannerBean> getWanAndroidBanner() {
         final MutableLiveData<WanAndroidBannerBean> data = new MutableLiveData<>();
         Disposable subscribe = HttpClient.Builder.getWanAndroidServer().getWanAndroidBanner()
                 .subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Consumer<WanAndroidBannerBean>() {
+                .subscribe(new Consumer<WanAndroidBannerBean>() {  // TODO 差别
 
                     @Override
                     public void accept(WanAndroidBannerBean bannerBean) throws Exception {
@@ -43,7 +48,7 @@ public class WanAndroidListViewModel extends BaseListViewModel {
                             data.setValue(null);
                         }
                     }
-                }, new Consumer<Throwable>() {
+                }, new Consumer<Throwable>() {// TODO 差别
                     @Override
                     public void accept(Throwable throwable) throws Exception {
                         data.setValue(null);
@@ -55,6 +60,11 @@ public class WanAndroidListViewModel extends BaseListViewModel {
 
     /**
      * @param cid 体系id
+     * 玩安卓，文章列表、知识体系下的文章
+     * https://www.wanandroid.com/article/list/0/json    // 首页  最新博文内容
+     * page 页码，从0开始
+     * cid  体系id
+     *
      */
     public MutableLiveData<HomeListBean> getHomeArticleList(Integer cid) {
         final MutableLiveData<HomeListBean> listData = new MutableLiveData<>();
@@ -84,6 +94,11 @@ public class WanAndroidListViewModel extends BaseListViewModel {
         return listData;
     }
 
+    /**
+     * 玩安卓，首页第二tab 最新项目；列表
+     *
+     * page 页码，从0开始
+     */
     public MutableLiveData<HomeListBean> getHomeProjectList() {
         final MutableLiveData<HomeListBean> listData = new MutableLiveData<>();
         HttpClient.Builder.getWanAndroidServer().getProjectList(mPage)

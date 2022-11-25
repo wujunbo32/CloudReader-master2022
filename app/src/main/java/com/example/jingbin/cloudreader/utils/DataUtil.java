@@ -158,7 +158,7 @@ public class DataUtil {
      */
     public static String getHtmlString(String content) {
         if (content != null && content.contains("&amp;")) {
-            return content.replace("&amp;", "&");
+            return content.replace("&amp;", "&");   // TODO problem 什么意思 为什么要改变&amp;
         }
         return content;
     }

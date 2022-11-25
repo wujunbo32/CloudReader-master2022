@@ -27,7 +27,7 @@ class CommonTabPagerAdapter : FragmentPagerAdapter {
 
     override fun getCount(): Int = pageCount
 
-    override fun getPageTitle(position: Int): CharSequence? = DataUtil.getHtmlString(mList?.get(position))!!
+    override fun getPageTitle(position: Int): CharSequence? = DataUtil.getHtmlString(mList?.get(position))!!   // !!表示为空就抛异常   ?.为空就跳过后面接的方法，
 
     interface TabPagerListener {
         fun getFragment(position: Int): Fragment?

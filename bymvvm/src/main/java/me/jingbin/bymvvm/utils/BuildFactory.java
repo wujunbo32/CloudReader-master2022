@@ -67,13 +67,13 @@ public class BuildFactory {
                 if (firHttps == null) {
                     synchronized (BuildFactory.class) {
                         if (firHttps == null) {
-                            firHttps = HttpUtils.getInstance().getBuilder(type).build().create(a);
+                            firHttps = HttpUtils.getInstance().getBuilder(type).build().create(a);  // 调用retrofit
                         }
                     }
                 }
                 return (T) firHttps;
             case HttpUtils.API_WAN_ANDROID:
-                if (wanAndroidHttps == null) {
+                if (wanAndroidHttps == null) {   // 需要吗
                     synchronized (BuildFactory.class) {
                         if (wanAndroidHttps == null) {
                             wanAndroidHttps = HttpUtils.getInstance().getBuilder(type).build().create(a);

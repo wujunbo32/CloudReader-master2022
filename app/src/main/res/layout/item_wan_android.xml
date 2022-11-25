@@ -56,7 +56,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:visibility="gone" />
-
+        <!--这个layout是文字前面的标志  “新” “作者名”  等等符号-->
         <RelativeLayout
             android:id="@+id/rl_header"
             android:layout_width="0dp"
@@ -66,7 +66,7 @@
             app:layout_constraintStart_toEndOf="@+id/iv_image"
             app:layout_constraintTop_toTopOf="parent"
             tools:visibility="gone">
-
+            <!--为啥默认为gone上面-->
             <TextView
                 android:id="@+id/iv_new"
                 android:layout_width="wrap_content"

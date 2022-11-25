@@ -47,34 +47,37 @@ public class WanAndroidAdapter extends BaseBindingAdapter<ArticlesBean, ItemWanA
     public WanAndroidAdapter(Activity activity) {
         super(R.layout.item_wan_android);
         this.activity = activity;
-        model = new CollectModel();
+        model = new CollectModel();   // 收藏相关
     }
 
     @Override
     protected void bindView(BaseBindingHolder holder, ArticlesBean bean, ItemWanAndroidBinding binding, int position) {
         if (bean != null) {
             if (isCollectList) {
-                bean.setCollect(true);
+                bean.setCollect(true);// 是否收藏
             }
             if (isShowDesc) {
-                binding.tvTitle.setSingleLine();
+                binding.tvTitle.setSingleLine();// 列表中是否显示描述
             }
             binding.setBean(bean);
             binding.setAdapter(WanAndroidAdapter.this);
-            if (!TextUtils.isEmpty(bean.getEnvelopePic()) && !isNoImage) {
-                bean.setShowImage(true);
+            if (!TextUtils.isEmpty(bean.getEnvelopePic()) && !isNoImage) {  // getEnvelopePic图片地址
+                bean.setShowImage(true);    // 控制子项图片是否显示
             } else {
                 bean.setShowImage(false);
             }
 
+            // 子项点击跳转
             if (!isMyShare) {
                 binding.getRoot().setOnClickListener(new PerfectClickListener() {
                     @Override
-                    protected void onNoDoubleClick(View v) {
+                    protected void onNoDoubleClick(View v) {   // binding 是 ItemWanAndroidBinding
                         WebViewActivity.loadUrl(activity, bean.getLink(), bean.getTitle());
                     }
                 });
             }
+
+            // 红心 收藏   TODO problem 看不懂
             binding.vbCollect.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -162,10 +165,12 @@ public class WanAndroidAdapter extends BaseBindingAdapter<ArticlesBean, ItemWanA
         this.isNoImage = isNoImage;
     }
 
+    //网页
     public void openDetail(ArticlesBean bean) {
         WebViewActivity.loadUrl(activity, bean.getLink(), bean.getTitle());
     }
 
+    //玩安卓分类文章列表
     public void openArticleList(ArticlesBean bean) {
         ArticleListActivity.start(activity, bean.getChapterId(), bean.getChapterName());
     }

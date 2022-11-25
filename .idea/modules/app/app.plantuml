@@ -1,0 +1,2421 @@
+@startuml
+
+title __CLOUDREADER-MASTER.APP's Class Diagram__\n
+
+  namespace androidx.databinding {
+    class androidx.databinding.DataBinderMapperImpl {
+    }
+  }
+  
+
+  namespace androidx.databinding {
+    interface androidx.databinding.DataBindingComponent {
+    }
+  }
+  
+
+  namespace androidx.databinding {
+    namespace library.baseAdapters {
+      class androidx.databinding.library.baseAdapters.BR {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    class com.example.jingbin.cloudreader.BR {
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    class com.example.jingbin.cloudreader.BuildConfig {
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    class com.example.jingbin.cloudreader.DataBinderMapperImpl {
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace adapter {
+      class com.example.jingbin.cloudreader.adapter.CategoryArticleAdapter {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace adapter {
+      class com.example.jingbin.cloudreader.adapter.CoinAdapter {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace adapter {
+      class com.example.jingbin.cloudreader.adapter.CollectUrlAdapter {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace adapter {
+      class com.example.jingbin.cloudreader.adapter.DouBanTopAdapter {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace adapter {
+      class com.example.jingbin.cloudreader.adapter.EverydayAdapter {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace adapter {
+      class com.example.jingbin.cloudreader.adapter.FilmDetailImageAdapter {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace adapter {
+      class com.example.jingbin.cloudreader.adapter.GankAndroidAdapter {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace adapter {
+      class com.example.jingbin.cloudreader.adapter.GankAndroidSearchAdapter {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace adapter {
+      class com.example.jingbin.cloudreader.adapter.NavigationAdapter {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace adapter {
+      class com.example.jingbin.cloudreader.adapter.NavigationContentAdapter {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace adapter {
+      class com.example.jingbin.cloudreader.adapter.OneAdapter {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace adapter {
+      class com.example.jingbin.cloudreader.adapter.TreeAdapter {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace adapter {
+      class com.example.jingbin.cloudreader.adapter.WanAndroidAdapter {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace adapter {
+      class com.example.jingbin.cloudreader.adapter.WxArticleAdapter {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace base {
+      abstract class com.example.jingbin.cloudreader.base.BaseHeaderActivity {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace bean {
+      class com.example.jingbin.cloudreader.bean.AndroidBean {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace bean {
+      class com.example.jingbin.cloudreader.bean.CollectUrlBean {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace bean {
+      class com.example.jingbin.cloudreader.bean.ComingFilmBean {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace bean {
+      class com.example.jingbin.cloudreader.bean.FrontpageBean {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace bean {
+      class com.example.jingbin.cloudreader.bean.GankIoDataBean {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace bean {
+      class com.example.jingbin.cloudreader.bean.GankIoDayBean {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace bean {
+      class com.example.jingbin.cloudreader.bean.HotMovieBean {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace bean {
+      class com.example.jingbin.cloudreader.bean.ImageItemsBean {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace bean {
+      class com.example.jingbin.cloudreader.bean.MovieDetailBean {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace bean {
+      class com.example.jingbin.cloudreader.bean.MtimeFilmeBean {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace bean {
+      namespace moviechild {
+        class com.example.jingbin.cloudreader.bean.moviechild.FilmItemBean {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace bean {
+      namespace moviechild {
+        class com.example.jingbin.cloudreader.bean.moviechild.ImagesBean {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace bean {
+      namespace moviechild {
+        class com.example.jingbin.cloudreader.bean.moviechild.PersonBean {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace bean {
+      namespace moviechild {
+        class com.example.jingbin.cloudreader.bean.moviechild.RatingBean {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace bean {
+      namespace moviechild {
+        class com.example.jingbin.cloudreader.bean.moviechild.SubjectsBean {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace bean {
+      namespace wanandroid {
+        class com.example.jingbin.cloudreader.bean.wanandroid.ArticlesBean {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace bean {
+      namespace wanandroid {
+        class com.example.jingbin.cloudreader.bean.wanandroid.BaseResultBean {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace bean {
+      namespace wanandroid {
+        class com.example.jingbin.cloudreader.bean.wanandroid.CoinUserInfoBean {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace bean {
+      namespace wanandroid {
+        class com.example.jingbin.cloudreader.bean.wanandroid.DuanZiBean {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace bean {
+      namespace wanandroid {
+        class com.example.jingbin.cloudreader.bean.wanandroid.HomeListBean {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace bean {
+      namespace wanandroid {
+        class com.example.jingbin.cloudreader.bean.wanandroid.LoginBean {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace bean {
+      namespace wanandroid {
+        class com.example.jingbin.cloudreader.bean.wanandroid.NaviJsonBean {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace bean {
+      namespace wanandroid {
+        class com.example.jingbin.cloudreader.bean.wanandroid.QsbkListBean {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace bean {
+      namespace wanandroid {
+        class com.example.jingbin.cloudreader.bean.wanandroid.SearchTagBean {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace bean {
+      namespace wanandroid {
+        class com.example.jingbin.cloudreader.bean.wanandroid.TreeBean {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace bean {
+      namespace wanandroid {
+        class com.example.jingbin.cloudreader.bean.wanandroid.TreeItemBean {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace bean {
+      namespace wanandroid {
+        class com.example.jingbin.cloudreader.bean.wanandroid.WanAndroidBannerBean {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace bean {
+      namespace wanandroid {
+        class com.example.jingbin.cloudreader.bean.wanandroid.WxarticleDetailItemBean {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace bean {
+      namespace wanandroid {
+        class com.example.jingbin.cloudreader.bean.wanandroid.WxarticleItemBean {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      class com.example.jingbin.cloudreader.data.UserUtil {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace model {
+        class com.example.jingbin.cloudreader.data.model.CollectModel {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace model {
+        class com.example.jingbin.cloudreader.data.model.EverydayModel {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace model {
+        class com.example.jingbin.cloudreader.data.model.GankOtherModel {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace model {
+        class com.example.jingbin.cloudreader.data.model.JokeModel {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace model {
+        class com.example.jingbin.cloudreader.data.model.LoginModel {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace model {
+        class com.example.jingbin.cloudreader.data.model.OneRepository {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.ActivityCategoryDetailBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.ActivityDoubanTopBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.ActivityFilmDetailBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.ActivityHeaderBaseBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.ActivityLoginBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.ActivityMainBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.ActivityMovieHeaderBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.ActivityMyCollectBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.ActivityNavAboutBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.ActivityNavAdmireBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.ActivityNavDeedBackBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.ActivityNavDownloadBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.ActivityNavHomePageBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.ActivityNavNightModeBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.ActivityOneMovieDetailBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.ActivityPublishBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.ActivitySearchBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.ActivityTransitionBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.AppBarMainBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.BaseHeaderTitleBarBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.FooterItemEverydayBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.FragmentAndroidBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.FragmentCategoryArticleBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.FragmentContentBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.FragmentEverydayBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.FragmentNaviBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.FragmentOneBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.FragmentSquareBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.FragmentWanAndroidBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.FragmentWanFindBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.FragmentWelfareBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.HeaderCoinDetailBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.HeaderCoinRankBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.HeaderFilmDetailBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.HeaderItemEverydayBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.HeaderItemOneBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.HeaderItemTreeBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.HeaderShareArticleBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.HeaderSlideShapeBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.HeaderWanAndroidBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.HomeMiddleLayoutBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.ItemAndroidBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.ItemAndroidSkeletonBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.ItemCategoryArticleBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.ItemCollectLinkBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.ItemDoubanTopBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.ItemEverydayOneBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.ItemEverydayThreeBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.ItemEverydayTitleBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.ItemEverydayTwoBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.ItemFilmBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.ItemFilmComingBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.ItemFilmDetailActorBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.ItemFilmDetailImageBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.ItemJokeBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.ItemMovieDetailPersonBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.ItemNavigationBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.ItemNavigationContentBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.ItemNavigationTitleBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.ItemOneBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.ItemTreeBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.ItemWanAndroidBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.ItemWanAndroidSkeletonBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.ItemWanCoinBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.ItemWanCoinRankBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.ItemWelfareBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.ItemWxarticleBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.LayoutKnowledgeTagBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace data {
+      namespace inding {
+        class com.example.jingbin.cloudreader.databinding.NavHeaderMainBindingImpl {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace generated.callback {
+      class com.example.jingbin.cloudreader.generated.callback.OnClickListener {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace http {
+      interface com.example.jingbin.cloudreader.http.HttpClient {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace http {
+      interface com.example.jingbin.cloudreader.http.RequestImpl {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace http {
+      namespace cache {
+        class com.example.jingbin.cloudreader.http.cache.ACache {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace ui {
+      class com.example.jingbin.cloudreader.ui.LoadingActivity {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace ui {
+      class com.example.jingbin.cloudreader.ui.MainActivity {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace ui {
+      class com.example.jingbin.cloudreader.ui.WebViewActivity {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace ui {
+      namespace douban {
+        class com.example.jingbin.cloudreader.ui.douban.DoubanTopActivity {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace ui {
+      namespace douban {
+        class com.example.jingbin.cloudreader.ui.douban.OneFragment {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace ui {
+      namespace douban {
+        class com.example.jingbin.cloudreader.ui.douban.OneMovieDetailActivity {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace ui {
+      namespace film {
+        class com.example.jingbin.cloudreader.ui.film.FilmFragment {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace ui {
+      namespace film {
+        namespace child {
+          class com.example.jingbin.cloudreader.ui.film.child.FilmComingFragment {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace ui {
+      namespace film {
+        namespace child {
+          class com.example.jingbin.cloudreader.ui.film.child.FilmDetailActivity {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace ui {
+      namespace film {
+        namespace child {
+          class com.example.jingbin.cloudreader.ui.film.child.FilmShowingFragment {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace ui {
+      namespace gank {
+        class com.example.jingbin.cloudreader.ui.gank.GankFragment {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace ui {
+      namespace gank {
+        namespace child {
+          class com.example.jingbin.cloudreader.ui.gank.child.AndroidFragment {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace ui {
+      namespace gank {
+        namespace child {
+          class com.example.jingbin.cloudreader.ui.gank.child.CustomFragment {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace ui {
+      namespace gank {
+        namespace child {
+          class com.example.jingbin.cloudreader.ui.gank.child.EverydayFragment {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace ui {
+      namespace gank {
+        namespace child {
+          class com.example.jingbin.cloudreader.ui.gank.child.GankHomeFragment {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace ui {
+      namespace gank {
+        namespace child {
+          class com.example.jingbin.cloudreader.ui.gank.child.WelfareFragment {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace ui {
+      namespace menu {
+        class com.example.jingbin.cloudreader.ui.menu.NavAboutActivity {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace ui {
+      namespace menu {
+        class com.example.jingbin.cloudreader.ui.menu.NavAdmireActivity {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace ui {
+      namespace menu {
+        class com.example.jingbin.cloudreader.ui.menu.NavDeedBackActivity {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace ui {
+      namespace menu {
+        class com.example.jingbin.cloudreader.ui.menu.NavDownloadActivity {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace ui {
+      namespace menu {
+        class com.example.jingbin.cloudreader.ui.menu.NavHomePageActivity {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace ui {
+      namespace menu {
+        class com.example.jingbin.cloudreader.ui.menu.SearchActivity {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace ui {
+      namespace wan {
+        class com.example.jingbin.cloudreader.ui.wan.WanFragment {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace ui {
+      namespace wan {
+        namespace child {
+          class com.example.jingbin.cloudreader.ui.wan.child.ArticleListActivity {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace ui {
+      namespace wan {
+        namespace child {
+          class com.example.jingbin.cloudreader.ui.wan.child.CategoryArticleFragment {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace ui {
+      namespace wan {
+        namespace child {
+          class com.example.jingbin.cloudreader.ui.wan.child.CategoryDetailActivity {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace ui {
+      namespace wan {
+        namespace child {
+          class com.example.jingbin.cloudreader.ui.wan.child.CoinDetailFragment {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace ui {
+      namespace wan {
+        namespace child {
+          class com.example.jingbin.cloudreader.ui.wan.child.CoinRankFragment {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace ui {
+      namespace wan {
+        namespace child {
+          class com.example.jingbin.cloudreader.ui.wan.child.CollectArticleFragment {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace ui {
+      namespace wan {
+        namespace child {
+          class com.example.jingbin.cloudreader.ui.wan.child.CollectLinkFragment {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace ui {
+      namespace wan {
+        namespace child {
+          class com.example.jingbin.cloudreader.ui.wan.child.HomeFragment {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace ui {
+      namespace wan {
+        namespace child {
+          class com.example.jingbin.cloudreader.ui.wan.child.JokeFragment {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace ui {
+      namespace wan {
+        namespace child {
+          class com.example.jingbin.cloudreader.ui.wan.child.LoginActivity {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace ui {
+      namespace wan {
+        namespace child {
+          class com.example.jingbin.cloudreader.ui.wan.child.MyCoinActivity {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace ui {
+      namespace wan {
+        namespace child {
+          class com.example.jingbin.cloudreader.ui.wan.child.MyCollectActivity {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace ui {
+      namespace wan {
+        namespace child {
+          class com.example.jingbin.cloudreader.ui.wan.child.NavigationFragment {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace ui {
+      namespace wan {
+        namespace child {
+          class com.example.jingbin.cloudreader.ui.wan.child.TreeFragment {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace ui {
+      namespace wan {
+        namespace child {
+          class com.example.jingbin.cloudreader.ui.wan.child.WanFindFragment {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace utils {
+      class com.example.jingbin.cloudreader.utils.BaseTools {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace utils {
+      class com.example.jingbin.cloudreader.utils.DataUtil {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace utils {
+      class com.example.jingbin.cloudreader.utils.DebugUtil {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace utils {
+      class com.example.jingbin.cloudreader.utils.DensityUtil {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace utils {
+      class com.example.jingbin.cloudreader.utils.DialogBuild {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace utils {
+      class com.example.jingbin.cloudreader.utils.GlideUtil {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace utils {
+      class com.example.jingbin.cloudreader.utils.NightModeUtil {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace utils {
+      abstract class com.example.jingbin.cloudreader.utils.PerfectClickListener {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace utils {
+      class com.example.jingbin.cloudreader.utils.PermissionHandler {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace utils {
+      class com.example.jingbin.cloudreader.utils.QRCodeUtil {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace utils {
+      class com.example.jingbin.cloudreader.utils.RefreshHelper {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace utils {
+      class com.example.jingbin.cloudreader.utils.RxSaveImage {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace utils {
+      class com.example.jingbin.cloudreader.utils.SDCardDirUtil {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace utils {
+      class com.example.jingbin.cloudreader.utils.SPUtils {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace utils {
+      class com.example.jingbin.cloudreader.utils.ShareUtils {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace utils {
+      class com.example.jingbin.cloudreader.utils.StatusBarUtil {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace utils {
+      class com.example.jingbin.cloudreader.utils.StringFormatUtil {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace utils {
+      class com.example.jingbin.cloudreader.utils.TimeUtil {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace utils {
+      class com.example.jingbin.cloudreader.utils.ToastUtil {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace utils {
+      class com.example.jingbin.cloudreader.utils.ToolbarHelper {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace utils {
+      class com.example.jingbin.cloudreader.utils.WebUtil {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace view {
+      class com.example.jingbin.cloudreader.view.CustomChangeBounds {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace view {
+      class com.example.jingbin.cloudreader.view.MyFragmentPagerAdapter {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace view {
+      class com.example.jingbin.cloudreader.view.MyNestedScrollView {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace view {
+      class com.example.jingbin.cloudreader.view.OnMyPageChangeListener {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace view {
+      class com.example.jingbin.cloudreader.view.ThinBoldSpan {
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace view {
+      namespace bigimage {
+        class com.example.jingbin.cloudreader.view.bigimage.BigImagePagerActivity {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace view {
+      namespace byview {
+        class com.example.jingbin.cloudreader.view.byview.NeteaseLoadMoreView {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace view {
+      namespace byview {
+        class com.example.jingbin.cloudreader.view.byview.NeteaseRefreshHeaderView {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace view {
+      namespace sliding {
+        class com.example.jingbin.cloudreader.view.sliding.Instrument {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace view {
+      namespace sliding {
+        class com.example.jingbin.cloudreader.view.sliding.SlidingLayout {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace view {
+      namespace statue {
+        class com.example.jingbin.cloudreader.view.statue.StatusBarUtils {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace view {
+      namespace viewbigimage {
+        class com.example.jingbin.cloudreader.view.viewbigimage.HackyViewPager {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace view {
+      namespace viewbigimage {
+        class com.example.jingbin.cloudreader.view.viewbigimage.ViewBigImageActivity {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace view {
+      namespace odel.gank {
+        class com.example.jingbin.cloudreader.viewmodel.gank.EverydayViewModel {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace view {
+      namespace odel.gank {
+        class com.example.jingbin.cloudreader.viewmodel.gank.GankHomeViewModel {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace view {
+      namespace odel.gank {
+        class com.example.jingbin.cloudreader.viewmodel.gank.GankViewModel {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace view {
+      namespace odel.gank {
+        class com.example.jingbin.cloudreader.viewmodel.gank.WelfareViewModel {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace view {
+      namespace odel.menu {
+        class com.example.jingbin.cloudreader.viewmodel.menu.LoginViewModel {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace view {
+      namespace odel.movie {
+        class com.example.jingbin.cloudreader.viewmodel.movie.DoubanTopViewModel {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace view {
+      namespace odel.movie {
+        class com.example.jingbin.cloudreader.viewmodel.movie.FilmViewModel {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace view {
+      namespace odel.movie {
+        interface com.example.jingbin.cloudreader.viewmodel.movie.OnMovieLoadListener {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace view {
+      namespace odel.movie {
+        class com.example.jingbin.cloudreader.viewmodel.movie.OneViewModel {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace view {
+      namespace odel.wan {
+        class com.example.jingbin.cloudreader.viewmodel.wan.ArticleListViewModel {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace view {
+      namespace odel.wan {
+        class com.example.jingbin.cloudreader.viewmodel.wan.CoinListViewModel {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace view {
+      namespace odel.wan {
+        class com.example.jingbin.cloudreader.viewmodel.wan.CollectLinkModel {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace view {
+      namespace odel.wan {
+        class com.example.jingbin.cloudreader.viewmodel.wan.JokeViewModel {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace view {
+      namespace odel.wan {
+        class com.example.jingbin.cloudreader.viewmodel.wan.MainViewModel {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace view {
+      namespace odel.wan {
+        class com.example.jingbin.cloudreader.viewmodel.wan.NavigationViewModel {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace view {
+      namespace odel.wan {
+        class com.example.jingbin.cloudreader.viewmodel.wan.SearchViewModel {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace view {
+      namespace odel.wan {
+        class com.example.jingbin.cloudreader.viewmodel.wan.TreeViewModel {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace view {
+      namespace odel.wan {
+        class com.example.jingbin.cloudreader.viewmodel.wan.WanAndroidListViewModel {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace view {
+      namespace odel.wan {
+        class com.example.jingbin.cloudreader.viewmodel.wan.WanFindViewModel {
+        }
+      }
+    }
+  }
+  
+
+  namespace com.example.jingbin.cloudreader {
+    namespace view {
+      namespace odel.wan {
+        interface com.example.jingbin.cloudreader.viewmodel.wan.WanNavigator {
+        }
+      }
+    }
+  }
+  
+
+  namespace me.jingbin.bymvvm {
+    class me.jingbin.bymvvm.BR {
+    }
+  }
+  
+
+  androidx.databinding.DataBinderMapperImpl -up-|> androidx.databinding.MergedDataBinderMapper
+  com.example.jingbin.cloudreader.DataBinderMapperImpl -up-|> androidx.databinding.DataBinderMapper
+  com.example.jingbin.cloudreader.adapter.CategoryArticleAdapter -up-|> me.jingbin.bymvvm.adapter.BaseBindingAdapter
+  com.example.jingbin.cloudreader.adapter.CategoryArticleAdapter o-- com.example.jingbin.cloudreader.data.model.CollectModel : model
+  com.example.jingbin.cloudreader.adapter.CoinAdapter -up-|> me.jingbin.library.adapter.BaseByRecyclerViewAdapter
+  com.example.jingbin.cloudreader.adapter.CollectUrlAdapter -up-|> me.jingbin.bymvvm.adapter.BaseBindingAdapter
+  com.example.jingbin.cloudreader.adapter.CollectUrlAdapter o-- com.example.jingbin.cloudreader.data.model.CollectModel : model
+  com.example.jingbin.cloudreader.adapter.DouBanTopAdapter -up-|> me.jingbin.bymvvm.adapter.BaseBindingAdapter
+  com.example.jingbin.cloudreader.adapter.DouBanTopAdapter o-- com.example.jingbin.cloudreader.adapter.DouBanTopAdapter.OnClickListener : listener
+  com.example.jingbin.cloudreader.adapter.EverydayAdapter -up-|> me.jingbin.library.adapter.BaseByRecyclerViewAdapter
+  com.example.jingbin.cloudreader.adapter.FilmDetailImageAdapter -up-|> me.jingbin.bymvvm.adapter.BaseBindingAdapter
+  com.example.jingbin.cloudreader.adapter.GankAndroidAdapter -up-|> me.jingbin.bymvvm.adapter.BaseBindingAdapter
+  com.example.jingbin.cloudreader.adapter.GankAndroidSearchAdapter -up-|> me.jingbin.bymvvm.adapter.BaseBindingAdapter
+  com.example.jingbin.cloudreader.adapter.NavigationAdapter -up-|> me.jingbin.bymvvm.adapter.BaseBindingAdapter
+  com.example.jingbin.cloudreader.adapter.NavigationAdapter o-- com.example.jingbin.cloudreader.adapter.NavigationAdapter.OnSelectListener : listener
+  com.example.jingbin.cloudreader.adapter.NavigationContentAdapter -up-|> me.jingbin.library.adapter.BaseByRecyclerViewAdapter
+  com.example.jingbin.cloudreader.adapter.OneAdapter -up-|> me.jingbin.bymvvm.adapter.BaseBindingAdapter
+  com.example.jingbin.cloudreader.adapter.TreeAdapter -up-|> me.jingbin.library.adapter.BaseRecyclerAdapter
+  com.example.jingbin.cloudreader.adapter.WanAndroidAdapter -up-|> me.jingbin.bymvvm.adapter.BaseBindingAdapter
+  com.example.jingbin.cloudreader.adapter.WanAndroidAdapter o-- com.example.jingbin.cloudreader.data.model.CollectModel : model
+  com.example.jingbin.cloudreader.adapter.WxArticleAdapter -up-|> me.jingbin.bymvvm.adapter.BaseBindingAdapter
+  com.example.jingbin.cloudreader.adapter.WxArticleAdapter o-- com.example.jingbin.cloudreader.adapter.WxArticleAdapter.OnSelectListener : listener
+  com.example.jingbin.cloudreader.base.BaseHeaderActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.jingbin.cloudreader.base.BaseHeaderActivity o-- SV : bindingContentView
+  com.example.jingbin.cloudreader.base.BaseHeaderActivity o-- HV : bindingHeaderView
+  com.example.jingbin.cloudreader.base.BaseHeaderActivity o-- com.example.jingbin.cloudreader.databinding.BaseHeaderTitleBarBinding : bindingTitleView
+  com.example.jingbin.cloudreader.base.BaseHeaderActivity o-- com.example.jingbin.cloudreader.view.CustomChangeBounds : changeBounds
+  com.example.jingbin.cloudreader.bean.AndroidBean .up.|> java.io.Serializable
+  com.example.jingbin.cloudreader.bean.CollectUrlBean -up-|> androidx.databinding.BaseObservable
+  com.example.jingbin.cloudreader.bean.FrontpageBean .up.|> java.io.Serializable
+  com.example.jingbin.cloudreader.bean.FrontpageBean o-- com.example.jingbin.cloudreader.bean.FrontpageBean.ResultBannerBean : result
+  com.example.jingbin.cloudreader.bean.GankIoDataBean .up.|> java.io.Serializable
+  com.example.jingbin.cloudreader.bean.GankIoDataBean -up-|> androidx.databinding.BaseObservable
+  com.example.jingbin.cloudreader.bean.GankIoDayBean .up.|> java.io.Serializable
+  com.example.jingbin.cloudreader.bean.GankIoDayBean o-- com.example.jingbin.cloudreader.bean.GankIoDayBean.ResultsBean : results
+  com.example.jingbin.cloudreader.bean.HotMovieBean .up.|> java.io.Serializable
+  com.example.jingbin.cloudreader.bean.HotMovieBean -up-|> androidx.databinding.BaseObservable
+  com.example.jingbin.cloudreader.bean.ImageItemsBean .up.|> java.io.Serializable
+  com.example.jingbin.cloudreader.bean.MovieDetailBean -up-|> androidx.databinding.BaseObservable
+  com.example.jingbin.cloudreader.bean.MovieDetailBean o-- com.example.jingbin.cloudreader.bean.moviechild.ImagesBean : images
+  com.example.jingbin.cloudreader.bean.MovieDetailBean o-- com.example.jingbin.cloudreader.bean.moviechild.RatingBean : rating
+  com.example.jingbin.cloudreader.bean.moviechild.FilmItemBean .up.|> java.io.Serializable
+  com.example.jingbin.cloudreader.bean.moviechild.ImagesBean .up.|> java.io.Serializable
+  com.example.jingbin.cloudreader.bean.moviechild.ImagesBean -up-|> androidx.databinding.BaseObservable
+  com.example.jingbin.cloudreader.bean.moviechild.PersonBean .up.|> java.io.Serializable
+  com.example.jingbin.cloudreader.bean.moviechild.PersonBean -up-|> androidx.databinding.BaseObservable
+  com.example.jingbin.cloudreader.bean.moviechild.PersonBean o-- com.example.jingbin.cloudreader.bean.moviechild.ImagesBean : avatars
+  com.example.jingbin.cloudreader.bean.moviechild.RatingBean .up.|> java.io.Serializable
+  com.example.jingbin.cloudreader.bean.moviechild.RatingBean -up-|> androidx.databinding.BaseObservable
+  com.example.jingbin.cloudreader.bean.moviechild.SubjectsBean .up.|> java.io.Serializable
+  com.example.jingbin.cloudreader.bean.moviechild.SubjectsBean -up-|> androidx.databinding.BaseObservable
+  com.example.jingbin.cloudreader.bean.moviechild.SubjectsBean o-- com.example.jingbin.cloudreader.bean.moviechild.ImagesBean : images
+  com.example.jingbin.cloudreader.bean.moviechild.SubjectsBean o-- com.example.jingbin.cloudreader.bean.moviechild.RatingBean : rating
+  com.example.jingbin.cloudreader.bean.wanandroid.BaseResultBean -up-|> androidx.databinding.BaseObservable
+  com.example.jingbin.cloudreader.bean.wanandroid.BaseResultBean o-- T : data
+  com.example.jingbin.cloudreader.bean.wanandroid.CoinUserInfoBean -up-|> androidx.databinding.BaseObservable
+  com.example.jingbin.cloudreader.bean.wanandroid.DuanZiBean -up-|> androidx.databinding.BaseObservable
+  com.example.jingbin.cloudreader.bean.wanandroid.HomeListBean -up-|> androidx.databinding.BaseObservable
+  com.example.jingbin.cloudreader.bean.wanandroid.HomeListBean o-- com.example.jingbin.cloudreader.bean.wanandroid.HomeListBean.DataBean : data
+  com.example.jingbin.cloudreader.bean.wanandroid.LoginBean o-- me.jingbin.bymvvm.room.User : data
+  com.example.jingbin.cloudreader.bean.wanandroid.QsbkListBean -up-|> androidx.databinding.BaseObservable
+  com.example.jingbin.cloudreader.bean.wanandroid.SearchTagBean -up-|> androidx.databinding.BaseObservable
+  com.example.jingbin.cloudreader.bean.wanandroid.TreeBean .up.|> java.io.Serializable
+  com.example.jingbin.cloudreader.bean.wanandroid.TreeBean -up-|> androidx.databinding.BaseObservable
+  com.example.jingbin.cloudreader.bean.wanandroid.TreeItemBean .up.|> java.io.Serializable
+  com.example.jingbin.cloudreader.bean.wanandroid.WxarticleItemBean .up.|> java.io.Serializable
+  com.example.jingbin.cloudreader.databinding.ActivityCategoryDetailBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.ActivityCategoryDetailBinding
+  com.example.jingbin.cloudreader.databinding.ActivityDoubanTopBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.ActivityDoubanTopBinding
+  com.example.jingbin.cloudreader.databinding.ActivityFilmDetailBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.ActivityFilmDetailBinding
+  com.example.jingbin.cloudreader.databinding.ActivityHeaderBaseBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.ActivityHeaderBaseBinding
+  com.example.jingbin.cloudreader.databinding.ActivityLoginBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.ActivityLoginBinding
+  com.example.jingbin.cloudreader.databinding.ActivityMainBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.ActivityMainBinding
+  com.example.jingbin.cloudreader.databinding.ActivityMovieHeaderBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.ActivityMovieHeaderBinding
+  com.example.jingbin.cloudreader.databinding.ActivityMyCollectBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.ActivityMyCollectBinding
+  com.example.jingbin.cloudreader.databinding.ActivityNavAboutBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.ActivityNavAboutBinding
+  com.example.jingbin.cloudreader.databinding.ActivityNavAdmireBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.ActivityNavAdmireBinding
+  com.example.jingbin.cloudreader.databinding.ActivityNavDeedBackBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.ActivityNavDeedBackBinding
+  com.example.jingbin.cloudreader.databinding.ActivityNavDownloadBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.ActivityNavDownloadBinding
+  com.example.jingbin.cloudreader.databinding.ActivityNavHomePageBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.ActivityNavHomePageBinding
+  com.example.jingbin.cloudreader.databinding.ActivityNavNightModeBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.ActivityNavNightModeBinding
+  com.example.jingbin.cloudreader.databinding.ActivityOneMovieDetailBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.ActivityOneMovieDetailBinding
+  com.example.jingbin.cloudreader.databinding.ActivityPublishBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.ActivityPublishBinding
+  com.example.jingbin.cloudreader.databinding.ActivitySearchBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.ActivitySearchBinding
+  com.example.jingbin.cloudreader.databinding.ActivityTransitionBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.ActivityTransitionBinding
+  com.example.jingbin.cloudreader.databinding.AppBarMainBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.AppBarMainBinding
+  com.example.jingbin.cloudreader.databinding.BaseHeaderTitleBarBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.BaseHeaderTitleBarBinding
+  com.example.jingbin.cloudreader.databinding.FooterItemEverydayBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.FooterItemEverydayBinding
+  com.example.jingbin.cloudreader.databinding.FragmentAndroidBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.FragmentAndroidBinding
+  com.example.jingbin.cloudreader.databinding.FragmentCategoryArticleBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.FragmentCategoryArticleBinding
+  com.example.jingbin.cloudreader.databinding.FragmentContentBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.FragmentContentBinding
+  com.example.jingbin.cloudreader.databinding.FragmentEverydayBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.FragmentEverydayBinding
+  com.example.jingbin.cloudreader.databinding.FragmentNaviBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.FragmentNaviBinding
+  com.example.jingbin.cloudreader.databinding.FragmentOneBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.FragmentOneBinding
+  com.example.jingbin.cloudreader.databinding.FragmentSquareBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.FragmentSquareBinding
+  com.example.jingbin.cloudreader.databinding.FragmentWanAndroidBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.FragmentWanAndroidBinding
+  com.example.jingbin.cloudreader.databinding.FragmentWanFindBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.FragmentWanFindBinding
+  com.example.jingbin.cloudreader.databinding.FragmentWelfareBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.FragmentWelfareBinding
+  com.example.jingbin.cloudreader.databinding.HeaderCoinDetailBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.HeaderCoinDetailBinding
+  com.example.jingbin.cloudreader.databinding.HeaderCoinRankBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.HeaderCoinRankBinding
+  com.example.jingbin.cloudreader.databinding.HeaderFilmDetailBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.HeaderFilmDetailBinding
+  com.example.jingbin.cloudreader.databinding.HeaderItemEverydayBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.HeaderItemEverydayBinding
+  com.example.jingbin.cloudreader.databinding.HeaderItemOneBindingImpl .up.|> com.example.jingbin.cloudreader.generated.callback.OnClickListener.Listener
+  com.example.jingbin.cloudreader.databinding.HeaderItemOneBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.HeaderItemOneBinding
+  com.example.jingbin.cloudreader.databinding.HeaderItemTreeBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.HeaderItemTreeBinding
+  com.example.jingbin.cloudreader.databinding.HeaderShareArticleBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.HeaderShareArticleBinding
+  com.example.jingbin.cloudreader.databinding.HeaderSlideShapeBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.HeaderSlideShapeBinding
+  com.example.jingbin.cloudreader.databinding.HeaderWanAndroidBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.HeaderWanAndroidBinding
+  com.example.jingbin.cloudreader.databinding.HomeMiddleLayoutBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.HomeMiddleLayoutBinding
+  com.example.jingbin.cloudreader.databinding.ItemAndroidBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.ItemAndroidBinding
+  com.example.jingbin.cloudreader.databinding.ItemAndroidSkeletonBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.ItemAndroidSkeletonBinding
+  com.example.jingbin.cloudreader.databinding.ItemCategoryArticleBindingImpl .up.|> com.example.jingbin.cloudreader.generated.callback.OnClickListener.Listener
+  com.example.jingbin.cloudreader.databinding.ItemCategoryArticleBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.ItemCategoryArticleBinding
+  com.example.jingbin.cloudreader.databinding.ItemCollectLinkBindingImpl .up.|> com.example.jingbin.cloudreader.generated.callback.OnClickListener.Listener
+  com.example.jingbin.cloudreader.databinding.ItemCollectLinkBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.ItemCollectLinkBinding
+  com.example.jingbin.cloudreader.databinding.ItemDoubanTopBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.ItemDoubanTopBinding
+  com.example.jingbin.cloudreader.databinding.ItemEverydayOneBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.ItemEverydayOneBinding
+  com.example.jingbin.cloudreader.databinding.ItemEverydayThreeBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.ItemEverydayThreeBinding
+  com.example.jingbin.cloudreader.databinding.ItemEverydayTitleBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.ItemEverydayTitleBinding
+  com.example.jingbin.cloudreader.databinding.ItemEverydayTwoBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.ItemEverydayTwoBinding
+  com.example.jingbin.cloudreader.databinding.ItemFilmBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.ItemFilmBinding
+  com.example.jingbin.cloudreader.databinding.ItemFilmComingBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.ItemFilmComingBinding
+  com.example.jingbin.cloudreader.databinding.ItemFilmDetailActorBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.ItemFilmDetailActorBinding
+  com.example.jingbin.cloudreader.databinding.ItemFilmDetailImageBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.ItemFilmDetailImageBinding
+  com.example.jingbin.cloudreader.databinding.ItemJokeBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.ItemJokeBinding
+  com.example.jingbin.cloudreader.databinding.ItemMovieDetailPersonBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.ItemMovieDetailPersonBinding
+  com.example.jingbin.cloudreader.databinding.ItemNavigationBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.ItemNavigationBinding
+  com.example.jingbin.cloudreader.databinding.ItemNavigationContentBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.ItemNavigationContentBinding
+  com.example.jingbin.cloudreader.databinding.ItemNavigationTitleBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.ItemNavigationTitleBinding
+  com.example.jingbin.cloudreader.databinding.ItemOneBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.ItemOneBinding
+  com.example.jingbin.cloudreader.databinding.ItemTreeBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.ItemTreeBinding
+  com.example.jingbin.cloudreader.databinding.ItemWanAndroidBindingImpl .up.|> com.example.jingbin.cloudreader.generated.callback.OnClickListener.Listener
+  com.example.jingbin.cloudreader.databinding.ItemWanAndroidBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.ItemWanAndroidBinding
+  com.example.jingbin.cloudreader.databinding.ItemWanAndroidSkeletonBindingImpl .up.|> com.example.jingbin.cloudreader.generated.callback.OnClickListener.Listener
+  com.example.jingbin.cloudreader.databinding.ItemWanAndroidSkeletonBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.ItemWanAndroidSkeletonBinding
+  com.example.jingbin.cloudreader.databinding.ItemWanCoinBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.ItemWanCoinBinding
+  com.example.jingbin.cloudreader.databinding.ItemWanCoinRankBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.ItemWanCoinRankBinding
+  com.example.jingbin.cloudreader.databinding.ItemWelfareBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.ItemWelfareBinding
+  com.example.jingbin.cloudreader.databinding.ItemWxarticleBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.ItemWxarticleBinding
+  com.example.jingbin.cloudreader.databinding.LayoutKnowledgeTagBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.LayoutKnowledgeTagBinding
+  com.example.jingbin.cloudreader.databinding.NavHeaderMainBindingImpl -up-|> com.example.jingbin.cloudreader.databinding.NavHeaderMainBinding
+  com.example.jingbin.cloudreader.generated.callback.OnClickListener .up.|> android.view.View.OnClickListener
+  com.example.jingbin.cloudreader.generated.callback.OnClickListener o-- com.example.jingbin.cloudreader.generated.callback.OnClickListener.Listener : mListener
+  com.example.jingbin.cloudreader.http.cache.ACache o-- com.example.jingbin.cloudreader.http.cache.ACache.ACacheManager : mCache
+  com.example.jingbin.cloudreader.ui.LoadingActivity -up-|> androidx.fragment.app.FragmentActivity
+  com.example.jingbin.cloudreader.ui.MainActivity .up.|> android.view.View.OnClickListener
+  com.example.jingbin.cloudreader.ui.MainActivity .up.|> com.example.jingbin.cloudreader.view.CommonTabPagerAdapter.TabPagerListener
+  com.example.jingbin.cloudreader.ui.MainActivity -up-|> me.jingbin.bymvvm.base.BaseActivity
+  com.example.jingbin.cloudreader.ui.MainActivity o-- com.example.jingbin.cloudreader.databinding.NavHeaderMainBinding : bind
+  com.example.jingbin.cloudreader.ui.MainActivity o-- com.example.jingbin.cloudreader.utils.PerfectClickListener : listener
+  com.example.jingbin.cloudreader.ui.WebViewActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.jingbin.cloudreader.ui.WebViewActivity o-- com.example.jingbin.cloudreader.data.model.CollectModel : collectModel
+  com.example.jingbin.cloudreader.ui.douban.DoubanTopActivity -up-|> me.jingbin.bymvvm.base.BaseActivity
+  com.example.jingbin.cloudreader.ui.douban.DoubanTopActivity o-- com.example.jingbin.cloudreader.adapter.DouBanTopAdapter : mDouBanTopAdapter
+  com.example.jingbin.cloudreader.ui.douban.OneFragment -up-|> me.jingbin.bymvvm.base.BaseFragment
+  com.example.jingbin.cloudreader.ui.douban.OneFragment o-- com.example.jingbin.cloudreader.http.cache.ACache : aCache
+  com.example.jingbin.cloudreader.ui.douban.OneFragment o-- com.example.jingbin.cloudreader.ui.MainActivity : activity
+  com.example.jingbin.cloudreader.ui.douban.OneFragment o-- com.example.jingbin.cloudreader.bean.HotMovieBean : mHotMovieBean
+  com.example.jingbin.cloudreader.ui.douban.OneFragment o-- com.example.jingbin.cloudreader.adapter.OneAdapter : oneAdapter
+  com.example.jingbin.cloudreader.ui.douban.OneFragment o-- com.example.jingbin.cloudreader.databinding.HeaderItemOneBinding : oneBinding
+  com.example.jingbin.cloudreader.ui.douban.OneMovieDetailActivity -up-|> com.example.jingbin.cloudreader.base.BaseHeaderActivity
+  com.example.jingbin.cloudreader.ui.douban.OneMovieDetailActivity o-- com.example.jingbin.cloudreader.bean.moviechild.SubjectsBean : subjectsBean
+  com.example.jingbin.cloudreader.ui.film.FilmFragment -up-|> me.jingbin.bymvvm.base.BaseFragment
+  com.example.jingbin.cloudreader.ui.film.child.FilmComingFragment -up-|> me.jingbin.bymvvm.base.BaseFragment
+  com.example.jingbin.cloudreader.ui.film.child.FilmComingFragment o-- com.example.jingbin.cloudreader.adapter.FilmComingAdapter : adapter
+  com.example.jingbin.cloudreader.ui.film.child.FilmDetailActivity -up-|> com.example.jingbin.cloudreader.base.BaseHeaderActivity
+  com.example.jingbin.cloudreader.ui.film.child.FilmDetailActivity o-- com.example.jingbin.cloudreader.bean.moviechild.FilmItemBean : filmItemBean
+  com.example.jingbin.cloudreader.ui.film.child.FilmShowingFragment -up-|> me.jingbin.bymvvm.base.BaseFragment
+  com.example.jingbin.cloudreader.ui.film.child.FilmShowingFragment o-- com.example.jingbin.cloudreader.adapter.FilmAdapter : adapter
+  com.example.jingbin.cloudreader.ui.gank.GankFragment -up-|> me.jingbin.bymvvm.base.BaseFragment
+  com.example.jingbin.cloudreader.ui.gank.child.AndroidFragment -up-|> me.jingbin.bymvvm.base.BaseFragment
+  com.example.jingbin.cloudreader.ui.gank.child.AndroidFragment o-- com.example.jingbin.cloudreader.ui.MainActivity : activity
+  com.example.jingbin.cloudreader.ui.gank.child.AndroidFragment o-- com.example.jingbin.cloudreader.adapter.GankAndroidAdapter : adapter
+  com.example.jingbin.cloudreader.ui.gank.child.CustomFragment -up-|> me.jingbin.bymvvm.base.BaseFragment
+  com.example.jingbin.cloudreader.ui.gank.child.CustomFragment o-- com.example.jingbin.cloudreader.adapter.GankAndroidAdapter : adapter
+  com.example.jingbin.cloudreader.ui.gank.child.EverydayFragment -up-|> me.jingbin.bymvvm.base.BaseFragment
+  com.example.jingbin.cloudreader.ui.gank.child.EverydayFragment o-- com.example.jingbin.cloudreader.utils.PerfectClickListener : listener
+  com.example.jingbin.cloudreader.ui.gank.child.EverydayFragment o-- com.example.jingbin.cloudreader.adapter.EverydayAdapter : mEverydayAdapter
+  com.example.jingbin.cloudreader.ui.gank.child.EverydayFragment o-- com.example.jingbin.cloudreader.databinding.HeaderItemEverydayBinding : mHeaderBinding
+  com.example.jingbin.cloudreader.ui.gank.child.GankHomeFragment -up-|> me.jingbin.bymvvm.base.BaseFragment
+  com.example.jingbin.cloudreader.ui.gank.child.GankHomeFragment o-- com.example.jingbin.cloudreader.utils.PerfectClickListener : listener
+  com.example.jingbin.cloudreader.ui.gank.child.GankHomeFragment o-- com.example.jingbin.cloudreader.adapter.GankAndroidAdapter : mAdapter
+  com.example.jingbin.cloudreader.ui.gank.child.GankHomeFragment o-- com.example.jingbin.cloudreader.databinding.HeaderItemEverydayBinding : mHeaderBinding
+  com.example.jingbin.cloudreader.ui.gank.child.WelfareFragment -up-|> me.jingbin.bymvvm.base.BaseFragment
+  com.example.jingbin.cloudreader.ui.menu.NavAboutActivity -up-|> me.jingbin.bymvvm.base.BaseActivity
+  com.example.jingbin.cloudreader.ui.menu.NavAboutActivity o-- com.example.jingbin.cloudreader.utils.PerfectClickListener : listener
+  com.example.jingbin.cloudreader.ui.menu.NavAdmireActivity -up-|> me.jingbin.bymvvm.base.BaseActivity
+  com.example.jingbin.cloudreader.ui.menu.NavDeedBackActivity -up-|> me.jingbin.bymvvm.base.BaseActivity
+  com.example.jingbin.cloudreader.ui.menu.NavDeedBackActivity o-- com.example.jingbin.cloudreader.utils.PerfectClickListener : listener
+  com.example.jingbin.cloudreader.ui.menu.NavDownloadActivity -up-|> me.jingbin.bymvvm.base.BaseActivity
+  com.example.jingbin.cloudreader.ui.menu.NavHomePageActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.jingbin.cloudreader.ui.menu.SearchActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.jingbin.cloudreader.ui.menu.SearchActivity o-- com.example.jingbin.cloudreader.databinding.ActivitySearchBinding : binding
+  com.example.jingbin.cloudreader.ui.menu.SearchActivity o-- com.example.jingbin.cloudreader.adapter.CategoryArticleAdapter : mAdapter
+  com.example.jingbin.cloudreader.ui.menu.SearchActivity o-- com.example.jingbin.cloudreader.viewmodel.wan.SearchViewModel : viewModel
+  com.example.jingbin.cloudreader.ui.wan.WanFragment .up.|> com.example.jingbin.cloudreader.view.CommonTabPagerAdapter.TabPagerListener
+  com.example.jingbin.cloudreader.ui.wan.WanFragment -up-|> me.jingbin.bymvvm.base.BaseFragment
+  com.example.jingbin.cloudreader.ui.wan.child.ArticleListActivity -up-|> me.jingbin.bymvvm.base.BaseActivity
+  com.example.jingbin.cloudreader.ui.wan.child.ArticleListActivity o-- com.example.jingbin.cloudreader.adapter.WanAndroidAdapter : mAdapter
+  com.example.jingbin.cloudreader.ui.wan.child.CategoryArticleFragment -up-|> me.jingbin.bymvvm.base.BaseFragment
+  com.example.jingbin.cloudreader.ui.wan.child.CategoryArticleFragment o-- com.example.jingbin.cloudreader.adapter.CategoryArticleAdapter : mAdapter
+  com.example.jingbin.cloudreader.ui.wan.child.CategoryDetailActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.jingbin.cloudreader.ui.wan.child.CategoryDetailActivity o-- com.example.jingbin.cloudreader.databinding.ActivityCategoryDetailBinding : bindingView
+  com.example.jingbin.cloudreader.ui.wan.child.CoinDetailFragment -up-|> me.jingbin.bymvvm.base.BaseFragment
+  com.example.jingbin.cloudreader.ui.wan.child.CoinDetailFragment o-- com.example.jingbin.cloudreader.databinding.HeaderCoinDetailBinding : headerBinding
+  com.example.jingbin.cloudreader.ui.wan.child.CoinDetailFragment o-- com.example.jingbin.cloudreader.adapter.CoinAdapter : mAdapter
+  com.example.jingbin.cloudreader.ui.wan.child.CoinRankFragment -up-|> me.jingbin.bymvvm.base.BaseFragment
+  com.example.jingbin.cloudreader.ui.wan.child.CoinRankFragment o-- com.example.jingbin.cloudreader.databinding.HeaderCoinRankBinding : headerBinding
+  com.example.jingbin.cloudreader.ui.wan.child.CoinRankFragment o-- com.example.jingbin.cloudreader.adapter.CoinAdapter : mAdapter
+  com.example.jingbin.cloudreader.ui.wan.child.CollectArticleFragment -up-|> me.jingbin.bymvvm.base.BaseFragment
+  com.example.jingbin.cloudreader.ui.wan.child.CollectArticleFragment o-- com.example.jingbin.cloudreader.adapter.WanAndroidAdapter : mAdapter
+  com.example.jingbin.cloudreader.ui.wan.child.CollectLinkFragment -up-|> me.jingbin.bymvvm.base.BaseFragment
+  com.example.jingbin.cloudreader.ui.wan.child.CollectLinkFragment o-- com.example.jingbin.cloudreader.adapter.CollectUrlAdapter : mAdapter
+  com.example.jingbin.cloudreader.ui.wan.child.HomeFragment -up-|> me.jingbin.bymvvm.base.BaseFragment
+  com.example.jingbin.cloudreader.ui.wan.child.HomeFragment o-- com.example.jingbin.cloudreader.databinding.HeaderWanAndroidBinding : headerBinding
+  com.example.jingbin.cloudreader.ui.wan.child.HomeFragment o-- com.example.jingbin.cloudreader.adapter.WanAndroidAdapter : mAdapter
+  com.example.jingbin.cloudreader.ui.wan.child.JokeFragment -up-|> me.jingbin.bymvvm.base.BaseFragment
+  com.example.jingbin.cloudreader.ui.wan.child.JokeFragment o-- com.example.jingbin.cloudreader.adapter.JokeAdapter : mAdapter
+  com.example.jingbin.cloudreader.ui.wan.child.LoginActivity -up-|> me.jingbin.bymvvm.base.BaseActivity
+  com.example.jingbin.cloudreader.ui.wan.child.MyCoinActivity -up-|> me.jingbin.bymvvm.base.BaseActivity
+  com.example.jingbin.cloudreader.ui.wan.child.MyCollectActivity -up-|> me.jingbin.bymvvm.base.BaseActivity
+  com.example.jingbin.cloudreader.ui.wan.child.NavigationFragment -up-|> me.jingbin.bymvvm.base.BaseFragment
+  com.example.jingbin.cloudreader.ui.wan.child.NavigationFragment o-- com.example.jingbin.cloudreader.adapter.NavigationContentAdapter : mContentAdapter
+  com.example.jingbin.cloudreader.ui.wan.child.NavigationFragment o-- com.example.jingbin.cloudreader.adapter.NavigationAdapter : mNaviAdapter
+  com.example.jingbin.cloudreader.ui.wan.child.TreeFragment -up-|> me.jingbin.bymvvm.base.BaseFragment
+  com.example.jingbin.cloudreader.ui.wan.child.TreeFragment o-- com.example.jingbin.cloudreader.adapter.TreeAdapter : mTreeAdapter
+  com.example.jingbin.cloudreader.ui.wan.child.WanFindFragment -up-|> me.jingbin.bymvvm.base.BaseFragment
+  com.example.jingbin.cloudreader.ui.wan.child.WanFindFragment o-- com.example.jingbin.cloudreader.adapter.WanAndroidAdapter : mContentAdapter
+  com.example.jingbin.cloudreader.ui.wan.child.WanFindFragment o-- com.example.jingbin.cloudreader.adapter.WxArticleAdapter : wxArticleAdapter
+  com.example.jingbin.cloudreader.utils.PerfectClickListener .up.|> android.view.View.OnClickListener
+  com.example.jingbin.cloudreader.view.CustomChangeBounds -up-|> android.transition.ChangeBounds
+  com.example.jingbin.cloudreader.view.MyFragmentPagerAdapter -up-|> androidx.fragment.app.FragmentStatePagerAdapter
+  com.example.jingbin.cloudreader.view.MyNestedScrollView -up-|> androidx.core.widget.NestedScrollView
+  com.example.jingbin.cloudreader.view.MyNestedScrollView o-- com.example.jingbin.cloudreader.view.MyNestedScrollView.ScrollInterface : scrollInterface
+  com.example.jingbin.cloudreader.view.OnMyPageChangeListener .up.|> androidx.viewpager.widget.ViewPager.OnPageChangeListener
+  com.example.jingbin.cloudreader.view.ThinBoldSpan -up-|> android.text.style.CharacterStyle
+  com.example.jingbin.cloudreader.view.bigimage.BigImagePagerActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.jingbin.cloudreader.view.byview.NeteaseLoadMoreView .up.|> me.jingbin.library.BaseLoadMore
+  com.example.jingbin.cloudreader.view.byview.NeteaseLoadMoreView -up-|> android.widget.LinearLayout
+  com.example.jingbin.cloudreader.view.byview.NeteaseRefreshHeaderView .up.|> me.jingbin.library.BaseRefreshHeader
+  com.example.jingbin.cloudreader.view.byview.NeteaseRefreshHeaderView -up-|> android.widget.LinearLayout
+  com.example.jingbin.cloudreader.view.sliding.SlidingLayout -up-|> android.widget.FrameLayout
+  com.example.jingbin.cloudreader.view.sliding.SlidingLayout o-- com.example.jingbin.cloudreader.view.sliding.SlidingLayout.SlidingListener : mSlidingListener
+  com.example.jingbin.cloudreader.view.viewbigimage.HackyViewPager -up-|> androidx.viewpager.widget.ViewPager
+  com.example.jingbin.cloudreader.view.viewbigimage.ViewBigImageActivity .up.|> androidx.viewpager.widget.ViewPager.OnPageChangeListener
+  com.example.jingbin.cloudreader.view.viewbigimage.ViewBigImageActivity .up.|> com.github.chrisbanes.photoview.OnPhotoTapListener
+  com.example.jingbin.cloudreader.view.viewbigimage.ViewBigImageActivity -up-|> androidx.fragment.app.FragmentActivity
+  com.example.jingbin.cloudreader.viewmodel.gank.EverydayViewModel -up-|> me.jingbin.bymvvm.base.BaseViewModel
+  com.example.jingbin.cloudreader.viewmodel.gank.EverydayViewModel o-- com.example.jingbin.cloudreader.viewmodel.gank.EverydayViewModel.BannerDataBean : bannerDataBean
+  com.example.jingbin.cloudreader.viewmodel.gank.EverydayViewModel o-- com.example.jingbin.cloudreader.data.model.EverydayModel : mEverydayModel
+  com.example.jingbin.cloudreader.viewmodel.gank.EverydayViewModel o-- com.example.jingbin.cloudreader.http.cache.ACache : maCache
+  com.example.jingbin.cloudreader.viewmodel.gank.GankHomeViewModel -up-|> me.jingbin.bymvvm.base.BaseViewModel
+  com.example.jingbin.cloudreader.viewmodel.gank.GankViewModel -up-|> me.jingbin.bymvvm.base.BaseViewModel
+  com.example.jingbin.cloudreader.viewmodel.gank.GankViewModel o-- com.example.jingbin.cloudreader.data.model.GankOtherModel : mModel
+  com.example.jingbin.cloudreader.viewmodel.gank.WelfareViewModel -up-|> me.jingbin.bymvvm.base.BaseViewModel
+  com.example.jingbin.cloudreader.viewmodel.gank.WelfareViewModel o-- com.example.jingbin.cloudreader.data.model.GankOtherModel : mModel
+  com.example.jingbin.cloudreader.viewmodel.menu.LoginViewModel -up-|> me.jingbin.bymvvm.base.BaseViewModel
+  com.example.jingbin.cloudreader.viewmodel.movie.DoubanTopViewModel -up-|> me.jingbin.bymvvm.base.BaseViewModel
+  com.example.jingbin.cloudreader.viewmodel.movie.DoubanTopViewModel o-- com.example.jingbin.cloudreader.data.model.OneRepository : oneRepo
+  com.example.jingbin.cloudreader.viewmodel.movie.FilmViewModel -up-|> me.jingbin.bymvvm.base.BaseViewModel
+  com.example.jingbin.cloudreader.viewmodel.movie.OneViewModel -up-|> me.jingbin.bymvvm.base.BaseViewModel
+  com.example.jingbin.cloudreader.viewmodel.movie.OneViewModel o-- com.example.jingbin.cloudreader.data.model.OneRepository : oneRepo
+  com.example.jingbin.cloudreader.viewmodel.wan.ArticleListViewModel -up-|> me.jingbin.bymvvm.base.BaseListViewModel
+  com.example.jingbin.cloudreader.viewmodel.wan.CoinListViewModel -up-|> me.jingbin.bymvvm.base.BaseListViewModel
+  com.example.jingbin.cloudreader.viewmodel.wan.CollectLinkModel -up-|> me.jingbin.bymvvm.base.BaseListViewModel
+  com.example.jingbin.cloudreader.viewmodel.wan.JokeViewModel -up-|> me.jingbin.bymvvm.base.BaseViewModel
+  com.example.jingbin.cloudreader.viewmodel.wan.JokeViewModel o-- com.example.jingbin.cloudreader.data.model.JokeModel : mModel
+  com.example.jingbin.cloudreader.viewmodel.wan.JokeViewModel o-- com.example.jingbin.cloudreader.viewmodel.wan.WanNavigator.JokeModelNavigator : navigator
+  com.example.jingbin.cloudreader.viewmodel.wan.MainViewModel -up-|> me.jingbin.bymvvm.base.BaseViewModel
+  com.example.jingbin.cloudreader.viewmodel.wan.NavigationViewModel -up-|> me.jingbin.bymvvm.base.BaseViewModel
+  com.example.jingbin.cloudreader.viewmodel.wan.SearchViewModel -up-|> me.jingbin.bymvvm.base.BaseListViewModel
+  com.example.jingbin.cloudreader.viewmodel.wan.TreeViewModel -up-|> me.jingbin.bymvvm.base.BaseViewModel
+  com.example.jingbin.cloudreader.viewmodel.wan.WanAndroidListViewModel -up-|> me.jingbin.bymvvm.base.BaseListViewModel
+  com.example.jingbin.cloudreader.viewmodel.wan.WanFindViewModel -up-|> me.jingbin.bymvvm.base.BaseListViewModel
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

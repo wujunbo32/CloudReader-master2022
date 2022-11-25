@@ -39,7 +39,7 @@ public class BaseTools {
      * 直接通过快捷方式方式打开，回退到首页
      */
     public static void handleFinish(FragmentActivity activity) {
-        activity.supportFinishAfterTransition();
+        activity.supportFinishAfterTransition();  // activity动画结束后的调用finish,没有动画就直接调用finish
         if (!MainActivity.isLaunch) {
             LoadingActivity.start(activity);
         }

@@ -37,7 +37,7 @@ public class ArticlesBean {
     private String author;
     private int chapterId;
     private String chapterName;
-    private boolean collect;
+    private boolean collect;   // 是否收藏
     private int courseId;
     private String desc;
     private String envelopePic;
@@ -53,7 +53,7 @@ public class ArticlesBean {
     private int visible;
     private int zan;
     private boolean fresh;
-    private boolean isShowImage = true;
+    private boolean isShowImage = true;   // 你自己给初始化了，网络返回数据没有这个吗？TODO
     // 分类name
     private String navigationName;
     // 可能没有author 有 shareUser

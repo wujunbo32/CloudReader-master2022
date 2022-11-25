@@ -6,6 +6,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+<!--TODO TabLayout和ViewPagerFixed配合使用吗？ -->
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tab_gank"
             style="@style/tabLayoutStyle"

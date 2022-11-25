@@ -27,9 +27,9 @@ public class WanFragment extends BaseFragment<NoViewModel, FragmentContentBindin
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        showLoading();
+        showLoading();  //显示加载中状态
         /**
-         * 注意使用的是：getChildFragmentManager，
+         * 注意使用的是：getChildFragmentManager，  TODO 为啥
          * 这样setOffscreenPageLimit()就可以添加上，保留相邻2个实例，切换时不会卡
          */
         CommonTabPagerAdapter myAdapter = new CommonTabPagerAdapter(getChildFragmentManager(), Arrays.asList("玩安卓", "广场", "问答"));
@@ -37,14 +37,14 @@ public class WanFragment extends BaseFragment<NoViewModel, FragmentContentBindin
         bindingView.vpGank.setAdapter(myAdapter);
         // 左右预加载页面的个数
         bindingView.vpGank.setOffscreenPageLimit(2);
-        myAdapter.notifyDataSetChanged();
-        bindingView.tabGank.setupWithViewPager(bindingView.vpGank);
-        showContentView();
+        myAdapter.notifyDataSetChanged();  // TODO problem 为啥
+        bindingView.tabGank.setupWithViewPager(bindingView.vpGank);  // 绑定
+        showContentView();//加载完成的状态
     }
 
     @Override
     public int setContent() {
-        return R.layout.fragment_content;
+        return R.layout.fragment_content; //TableLayout  ViewPager 布局
     }
 
     @org.jetbrains.annotations.Nullable
@@ -52,11 +52,11 @@ public class WanFragment extends BaseFragment<NoViewModel, FragmentContentBindin
     public Fragment getFragment(int position) {
         switch (position) {
             case 0:
-                return HomeFragment.newInstance();
+                return HomeFragment.newInstance();  //玩安卓
             case 1:
-                return SquareFragment.Companion.newInstance();
+                return SquareFragment.Companion.newInstance(); //广场
             case 2:
-                return WendaFragment.Companion.newInstance();
+                return WendaFragment.Companion.newInstance(); //问答
         }
         return HomeFragment.newInstance();
     }

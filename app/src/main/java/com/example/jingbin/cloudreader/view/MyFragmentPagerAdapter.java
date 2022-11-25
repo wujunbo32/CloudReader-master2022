@@ -18,6 +18,7 @@ import java.util.List;
 
 /**
  * Created by jingbin on 2016/12/6.
+ * 这里是给主页 收藏页 使用适配
  */
 
 public class MyFragmentPagerAdapter extends FragmentStatePagerAdapter {
@@ -44,7 +45,7 @@ public class MyFragmentPagerAdapter extends FragmentStatePagerAdapter {
 
     @NonNull
     @Override
-    public Object instantiateItem(@NonNull ViewGroup container, int position) {
+    public Object instantiateItem(@NonNull ViewGroup container, int position) {   // TODO problem 不懂  instantiateItem、destroyItem、getRegisteredFragment
         Fragment fragment = (Fragment) super.instantiateItem(container, position);
         mRegisteredFragments.put(position, fragment);
         return fragment;
@@ -66,7 +67,7 @@ public class MyFragmentPagerAdapter extends FragmentStatePagerAdapter {
      */
     @Override
     public Fragment getItem(int position) {
-        if (mFragment != null) {
+        if (mFragment != null) {                 // 这里判断了，不为空则是收藏里的fragment   反之是主页里设置fragment
             return mFragment.get(position);
         } else {
             // 首页
@@ -85,7 +86,7 @@ public class MyFragmentPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public int getCount() {
-        return mFragment != null ? mFragment.size() : 3;
+        return mFragment != null ? mFragment.size() : 3;   // 这里也是区别判断是主页的还是收藏里的
     }
 
     /**
@@ -97,7 +98,7 @@ public class MyFragmentPagerAdapter extends FragmentStatePagerAdapter {
         if (mTitleList != null && position < mTitleList.size()) {
             return Html.fromHtml(mTitleList.get(position));
         } else {
-            return "";
+            return "";   // 主页没有文字
         }
     }
 }

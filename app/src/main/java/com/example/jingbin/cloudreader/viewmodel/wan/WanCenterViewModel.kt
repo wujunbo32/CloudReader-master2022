@@ -28,14 +28,15 @@ class WanCenterViewModel(application: Application) : BaseListViewModel(applicati
                 .subscribe({ bean ->
                     if (bean != null
                             && bean.data != null
-                            && bean.data.datas != null
+                            && bean.data.datas != null     //BaseResultBean<WxarticleDetailItemBean>   WxarticleDetailItemBean包含<List<ArticlesBean>>
                             && bean.data.datas.size > 0) {
                         data.setValue(bean.data.datas)
                     } else {
                         data.setValue(ArrayList())
                     }
                 }) { throwable: Throwable? -> data.setValue(null) }
-        addDisposable(subscribe)
+
+        addDisposable(subscribe) // 加入
         return data
     }
 
@@ -47,7 +48,7 @@ class WanCenterViewModel(application: Application) : BaseListViewModel(applicati
         val subscribe = HttpClient.Builder.getWanAndroidServer().getUserArticleList(page)
                 .subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
                 .subscribe({ bean ->
-                    if (bean != null
+                    if (bean != null   // 这些判断必须吗 ？ TODO
                             && bean.data != null
                             && bean.data.datas != null
                             && bean.data.datas.size > 0) {

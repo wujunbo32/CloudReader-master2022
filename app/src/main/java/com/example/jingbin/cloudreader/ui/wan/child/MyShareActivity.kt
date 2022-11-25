@@ -42,10 +42,11 @@ open class MyShareActivity : BaseActivity<WanCenterViewModel, FragmentWanAndroid
         loadData()
     }
 
+    // 看不懂这代码的跳转 TODO problem
     private fun getIntentData() {
         val username = intent.getStringExtra("username")
         userId = intent.getIntExtra("userId", 0)
-        title = if (userId > 0) username else "我的分享"
+        title = if (userId > 0) username else "我的分享"    // 为什么会绑定到 BaseActivity.java的setTitle方法上
     }
 
     private fun initRefreshView() {
@@ -88,7 +89,7 @@ open class MyShareActivity : BaseActivity<WanCenterViewModel, FragmentWanAndroid
     }
 
     private fun handleDelete(position: Int, id: Int) {
-        DialogBuild.show(this, "确定要删除吗？", "确定", "取消") { _, _ ->
+        DialogBuild.show(this, "确定要删除吗？", "确定", "取消") { _, _ ->  // TODO  problem 什么意思两个下划线
             viewModel.deleteShare(position, id).observe(this@MyShareActivity, Observer {
                 if (it.status) {
                     ToastUtil.showToast("删除成功")

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 
 import androidx.fragment.app.FragmentActivity;
@@ -21,6 +22,7 @@ import com.example.jingbin.cloudreader.utils.SPUtils;
  */
 public class LoadingActivity extends FragmentActivity {
 
+    private static final String TAG = "LoadingActivity";
     private Handler handler;
 
     @Override
@@ -28,6 +30,7 @@ public class LoadingActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         // 后台返回时可能启动这个页面 http://blog.csdn.net/jianiuqi/article/details/54091181
         if ((getIntent().getFlags() & Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT) != 0) {
+            Log.e(TAG, "onCreate: 后台返回启动");   // TODO 怎么测试出来
             finish();
             return;
         }

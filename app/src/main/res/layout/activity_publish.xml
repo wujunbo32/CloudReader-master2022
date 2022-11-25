@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <!--面用到了View中的一些属性-->
         <import type="android.view.View" />
 
         <variable
@@ -25,6 +25,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <!--双向绑定-->
         <EditText
             android:id="@+id/et_title"
             android:layout_width="match_parent"

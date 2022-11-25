@@ -35,6 +35,7 @@ import me.jingbin.bymvvm.utils.StatusBarUtil;
  */
 public abstract class BaseActivity<VM extends AndroidViewModel, SV extends ViewDataBinding> extends AppCompatActivity {
 
+
     // ViewModel
     protected VM viewModel;
     // 布局view
@@ -42,31 +43,34 @@ public abstract class BaseActivity<VM extends AndroidViewModel, SV extends ViewD
     private View errorView;
     private View loadingView;
     private ActivityBaseBinding mBaseBinding; // 由activity_base.xml生成  加载中、加载失败
-    private AnimationDrawable mAnimationDrawable;
-    private CompositeDisposable mCompositeDisposable;
+    private AnimationDrawable mAnimationDrawable;  // 帧动画
+    private CompositeDisposable mCompositeDisposable;  // Rxjava
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
 
     @Override
     public void setContentView(@LayoutRes int layoutResID) {
 
         mBaseBinding = DataBindingUtil.inflate(LayoutInflater.from(this), R.layout.activity_base, null, false);
-        bindingView = DataBindingUtil.inflate(LayoutInflater.from(this), layoutResID, null, false);
+        bindingView = DataBindingUtil.inflate(LayoutInflater.from(this), layoutResID, null, false);// TODO  layoutResID这在子类中传的是R.layout.activity_main
 
         // content
         RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         bindingView.getRoot().setLayoutParams(params);
-        RelativeLayout mContainer = (RelativeLayout) mBaseBinding.getRoot().findViewById(R.id.container);
-        mContainer.addView(bindingView.getRoot());
-        getWindow().setContentView(mBaseBinding.getRoot());
 
-        loadingView = ((ViewStub) findViewById(R.id.vs_loading)).inflate();
-        ImageView img = loadingView.findViewById(R.id.img_progress);
+        RelativeLayout mContainer = (RelativeLayout) mBaseBinding.getRoot().findViewById(R.id.container);  // activity_base.xml，container是RelativeLayout的ID
+
+        mContainer.addView(bindingView.getRoot());   // 这一段是干什么 TODO 把bindingView中视图添加到activity_base.xml里的RelativeLayout容器中
+        getWindow().setContentView(mBaseBinding.getRoot());  // 感觉activity_main.xml添加到activity_base.xml中的RelativeLayout里了
 
         // 加载动画
+        loadingView = ((ViewStub) findViewById(R.id.vs_loading)).inflate();  // ViewStub加载页面提示
+        ImageView img = loadingView.findViewById(R.id.img_progress);
         mAnimationDrawable = (AnimationDrawable) img.getDrawable();
         // 默认进入页面就开启动画
         if (!mAnimationDrawable.isRunning()) {
@@ -74,9 +78,9 @@ public abstract class BaseActivity<VM extends AndroidViewModel, SV extends ViewD
         }
 
         setToolBar(mBaseBinding.toolBar);
-        bindingView.getRoot().setVisibility(View.GONE);
-        initStatusBar();
-        initViewModel();
+        bindingView.getRoot().setVisibility(View.GONE);   // 为什么这里设置GONE TODO  注释掉没看出区别
+        initStatusBar();  // 设置透明状态栏，兼容4.4
+        initViewModel();  // 初始化ViewModel
     }
 
     protected void initStatusBar() {
@@ -88,7 +92,7 @@ public abstract class BaseActivity<VM extends AndroidViewModel, SV extends ViewD
      * 初始化ViewModel
      */
     private void initViewModel() {
-        Class<VM> viewModelClass = ClassUtil.getViewModel(this);
+        Class<VM> viewModelClass = ClassUtil.getViewModel(this);  // TODO problem
         if (viewModelClass != null) {
             this.viewModel = new ViewModelProvider(this).get(viewModelClass);
         }
@@ -102,7 +106,7 @@ public abstract class BaseActivity<VM extends AndroidViewModel, SV extends ViewD
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             //去除默认Title显示
-            actionBar.setDisplayShowTitleEnabled(false);
+            actionBar.setDisplayShowTitleEnabled(false);  // TODO problem
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setHomeAsUpIndicator(R.drawable.icon_back);
         }
@@ -119,8 +123,9 @@ public abstract class BaseActivity<VM extends AndroidViewModel, SV extends ViewD
         mBaseBinding.toolBar.setTitle(text);
     }
 
+    // 是否显示布局标题栏
     public void setNoTitle() {
-        mBaseBinding.toolBar.setVisibility(View.GONE);
+        mBaseBinding.toolBar.setVisibility(View.GONE);  // activity_base.xml
     }
 
     protected void showLoading() {
@@ -139,6 +144,14 @@ public abstract class BaseActivity<VM extends AndroidViewModel, SV extends ViewD
         }
     }
 
+    /**
+     * @description 显示内容
+     * @param
+     * @return 
+     * @author 菠菜
+     * @time 2022/11/23 14:41
+     */
+    
     protected void showContentView() {
         if (loadingView != null && loadingView.getVisibility() != View.GONE) {
             loadingView.setVisibility(View.GONE);

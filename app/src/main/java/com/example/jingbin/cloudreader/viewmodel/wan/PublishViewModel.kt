@@ -73,19 +73,20 @@ class PublishViewModel(application: Application) : BaseViewModel(application) {
     fun handleIcon(content: String?, clipContent: String, type: Int, imageView: ImageView) {
         when (type) {
             1 -> {
-                if (content.isNullOrEmpty()) {
+                if (content.isNullOrEmpty()) {   // 用户删除内容
                     // 内容为空
-                    if (clipContent.isBlank()) {
+                    if (clipContent.isBlank()) {   // 这里的再if没看懂 TODO problem
                         isShowTitleIv.set(false)
                     } else {
                         if (clipContent.contains("http")) {
                             isShowTitleIv.set(false)
                         } else {
-                            isShowTitleIv.set(true)
-                            imageView.setImageResource(R.drawable.icon_paste)
+                            isShowTitleIv.set(true)   // 可见不可见设置
+                            imageView.setImageResource(R.drawable.icon_paste)  // 显示复制图标   显示何种图标设置
                         }
                     }
                 } else {
+                    // 用户输入内容
                     isShowTitleIv.set(true)
                     imageView.setImageResource(R.drawable.icon_clear)
                 }

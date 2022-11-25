@@ -14,7 +14,7 @@ import me.jingbin.bymvvm.room.UserDataCallback;
 /**
  * @author jingbin
  * @data 2018/5/7
- * @Description 处理用户登录问题
+ * @Description 处理用户登录问题  TODO room 没看懂
  */
 
 public class UserUtil {
@@ -23,7 +23,7 @@ public class UserUtil {
      * 得到用户信息
      */
     public static void getUserInfo(OnUserInfoListener listener) {
-        Injection.get().getSingleBean(new UserDataCallback() {
+        Injection.get().getSingleBean(new UserDataCallback() {  // 不懂 TODO problem
             @Override
             public void onDataNotAvailable() {
                 if (listener != null) {
@@ -41,7 +41,7 @@ public class UserUtil {
     }
 
     /**
-     * 更新用户信息
+     * 更新用户信息   TODO room
      */
     public static void setUserInfo(User bean) {
         Injection.get().addData(bean);

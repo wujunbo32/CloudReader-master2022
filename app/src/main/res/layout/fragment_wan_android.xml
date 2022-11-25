@@ -1,6 +1,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+<!--TODO problem 为什么这里面可以加xmlns:tools-->
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/srl_wan"
         android:layout_width="match_parent"
@@ -14,7 +15,7 @@
             tools:itemCount="5"
             tools:layoutManager="LinearLayoutManager"
             tools:listitem="@layout/item_wan_android" />
-
+            <!--tool 这个属性是不是就展示用的 TODO problem-->
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </layout>

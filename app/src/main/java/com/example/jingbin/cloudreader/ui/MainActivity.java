@@ -7,6 +7,7 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -76,6 +77,7 @@ import me.jingbin.bymvvm.utils.StatusBarUtil;
  */
 public class MainActivity extends BaseActivity<MainViewModel, ActivityMainBinding> implements View.OnClickListener, CommonTabPagerAdapter.TabPagerListener {
 
+    private static final String TAG = "MainActivity";
     public static boolean isLaunch;
     public boolean isClickCloseApp;
     private ViewPager vpContent;
@@ -88,11 +90,11 @@ public class MainActivity extends BaseActivity<MainViewModel, ActivityMainBindin
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        showContentView();
-        isLaunch = true;
-        initView();
-        initContentFragment();
-        initDrawerLayout();
+        showContentView();  // 在父类，显示内容
+        isLaunch = true;   // 登录标志位
+        initView();       // 去掉标题 注册监听 检查更新
+        initContentFragment();   // fragment和viewpager  初始化Viewpager，设置Adapter, getItem中根据position返回 WanFragment、WanCenterFragment、WanProjectFragment                                                                      WanCenterFragment、WanProjectFragment
+        initDrawerLayout();   // 初始化 完成数据绑定 （登录用户名，等级 排名）
         initRxBus();
     }
 
@@ -104,15 +106,16 @@ public class MainActivity extends BaseActivity<MainViewModel, ActivityMainBindin
         bindingView.include.viewStatus.setLayoutParams(layoutParams);
     }
 
+    // 去掉标题 注册监听 检查更新
     private void initView() {
-        setNoTitle();
-        setSupportActionBar(bindingView.include.toolbar);
+        setNoTitle();  // 去掉原来布局文件中toolbar ，直接gone
+        setSupportActionBar(bindingView.include.toolbar);   // 设为自定义个toolbar
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             //去除默认Title显示
-            actionBar.setDisplayShowTitleEnabled(false);
+            actionBar.setDisplayShowTitleEnabled(false);  // 去掉标题
         }
-        vpContent = bindingView.include.vpContent;
+        vpContent = bindingView.include.vpContent;  // 可以直接用，为什么还要在布局呢
         ivTitleOne = bindingView.include.ivTitleOne;
         ivTitleTwo = bindingView.include.ivTitleTwo;
         ivTitleThree = bindingView.include.ivTitleThree;
@@ -120,7 +123,7 @@ public class MainActivity extends BaseActivity<MainViewModel, ActivityMainBindin
         bindingView.include.ivTitleOne.setOnClickListener(this);
         bindingView.include.ivTitleTwo.setOnClickListener(this);
         bindingView.include.ivTitleThree.setOnClickListener(this);
-        getClipContent();
+        getClipContent();   // TODO problem 什么用
         UpdateUtil.check(this, false);
     }
 
@@ -129,13 +132,13 @@ public class MainActivity extends BaseActivity<MainViewModel, ActivityMainBindin
      */
     private void initDrawerLayout() {
         bindingView.navView.inflateHeaderView(R.layout.nav_header_main);
-        View headerView = bindingView.navView.getHeaderView(0);
-        bind = DataBindingUtil.bind(headerView);
-        bind.setViewModel(viewModel);
+        View headerView = bindingView.navView.getHeaderView(0);  // TODO problem 不懂
+        bind = DataBindingUtil.bind(headerView);  // 不懂
+        bind.setViewModel(viewModel);  // TODO problem 不懂   viewModel 是 MainViewModel
         viewModel.isReadOk.set(SPUtils.isRead());
         viewModel.isReadOkNight.set(SPUtils.isReadNight());
 
-        GlideUtil.displayCircle(bind.ivAvatar, ConstantsImageUrl.IC_AVATAR);
+        GlideUtil.displayCircle(bind.ivAvatar, ConstantsImageUrl.IC_AVATAR);  // 固定图片
         bind.llNavExit.setOnClickListener(this);
         bind.ivAvatar.setOnClickListener(this);
 
@@ -152,8 +155,12 @@ public class MainActivity extends BaseActivity<MainViewModel, ActivityMainBindin
         bind.tvRank.setOnClickListener(listener);
         bind.llNavNightMode.setOnClickListener(listener);
 
-        viewModel.getUserInfo();
-        viewModel.coin.observe(this, new Observer<CoinUserInfoBean>() {
+        /**
+         *
+         * getUserInfo->BaseViewModel/execute(传入HttpClient接口中设置网络参数 - 完成RxJava配置
+         */
+        viewModel.getUserInfo();  // 调用这个方法就发生了网络请求
+        viewModel.coin.observe(this, new Observer<CoinUserInfoBean>() {  //注册观察者
             @Override
             public void onChanged(@Nullable CoinUserInfoBean coinUserInfoBean) {
                 if (coinUserInfoBean != null) {
@@ -169,20 +176,22 @@ public class MainActivity extends BaseActivity<MainViewModel, ActivityMainBindin
         });
     }
 
+    /*ViewPager初始化*/
     private void initContentFragment() {
         // 注意使用的是：getSupportFragmentManager
-        CommonTabPagerAdapter adapter = new CommonTabPagerAdapter(getSupportFragmentManager(), Arrays.asList("", "", ""));
-        adapter.setListener(this);
+        CommonTabPagerAdapter adapter = new CommonTabPagerAdapter(getSupportFragmentManager(), Arrays.asList("", "", ""));  // TODO 为什么传入FragmentManager
+        adapter.setListener(this);   // TODO 怎么来的这个setListener方法 problem  直接this
         vpContent.setAdapter(adapter);
         // 设置ViewPager最大缓存的页面个数(cpu消耗少)
         vpContent.setOffscreenPageLimit(2);
-        vpContent.addOnPageChangeListener(new OnMyPageChangeListener() {
+        // TODO problem 为什么要用addOnPageChangeListener   （是不是要区分每个分类角标对应的 的ViewPager）
+        vpContent.addOnPageChangeListener(new OnMyPageChangeListener() {   // TODO 直接ViewPager.OnPageChangeListener 不行吗？为什么要创建一个  实现了三个空方法
 
             @Override
             public void onPageSelected(int position) {
                 switch (position) {
                     case 0:
-                        setCurrentItem(0);
+                        setCurrentItem(0);  // 这里是设置分类角标，所有一直就三项
                         break;
                     case 1:
                         setCurrentItem(1);
@@ -199,6 +208,7 @@ public class MainActivity extends BaseActivity<MainViewModel, ActivityMainBindin
     }
 
 
+    // 抽屉页事件响应
     private PerfectClickListener listener = new PerfectClickListener() {
         @Override
         protected void onNoDoubleClick(final View v) {
@@ -206,7 +216,7 @@ public class MainActivity extends BaseActivity<MainViewModel, ActivityMainBindin
             bindingView.drawerLayout.postDelayed(() -> {
                 switch (v.getId()) {
                     case R.id.ll_nav_homepage:
-                        // 主页
+                        // 项目主页
                         NavHomePageActivity.startHome(MainActivity.this);
                         break;
                     case R.id.ll_nav_scan_download:
@@ -290,6 +300,7 @@ public class MainActivity extends BaseActivity<MainViewModel, ActivityMainBindin
         }
     };
 
+    // 响应分类角标  抽屉菜单  退出  头像
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -298,10 +309,11 @@ public class MainActivity extends BaseActivity<MainViewModel, ActivityMainBindin
                 bindingView.drawerLayout.openDrawer(GravityCompat.START);
                 break;
             case R.id.iv_title_two:
-                // 不然cpu会有损耗
+                // 不然cpu会有损耗    为什么要判断 TODO problem
                 if (vpContent.getCurrentItem() != 1) {
                     setCurrentItem(1);
                 }
+
                 break;
             case R.id.iv_title_one:
                 if (vpContent.getCurrentItem() != 0) {
@@ -332,7 +344,7 @@ public class MainActivity extends BaseActivity<MainViewModel, ActivityMainBindin
      *
      * @param position 分类角标
      */
-    private void setCurrentItem(int position) {
+    private void setCurrentItem(int position) {   // ViewPager的onPageSelected和onClick 方法调用了它
         boolean isOne = false;
         boolean isTwo = false;
         boolean isThree = false;
@@ -350,12 +362,15 @@ public class MainActivity extends BaseActivity<MainViewModel, ActivityMainBindin
                 isTwo = true;
                 break;
         }
-        vpContent.setCurrentItem(position);
-        ivTitleOne.setSelected(isOne);
+        //由fragment来确定分类角标
+        vpContent.setCurrentItem(position);  // 每个分类角标对应一个ViewPager
+        ivTitleOne.setSelected(isOne);   // 点击分类角标这里设置选中高亮，去掉的话就没有高亮了
         ivTitleTwo.setSelected(isTwo);
         ivTitleThree.setSelected(isThree);
     }
 
+
+    // 搜索
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
@@ -363,6 +378,7 @@ public class MainActivity extends BaseActivity<MainViewModel, ActivityMainBindin
     }
 
 
+    // 启动搜索栏
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.action_search) {
@@ -372,17 +388,20 @@ public class MainActivity extends BaseActivity<MainViewModel, ActivityMainBindin
         return super.onOptionsItemSelected(item);
     }
 
+     /*抽屉栏退出  和 onKeyDown里处理的是否重复  按下返回键没有执行*/
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
+            Log.e(TAG, "onBackPressed: +++++++++");
         } else {
             super.onBackPressed();
         }
     }
 
     /**
+     * TODO problem 什么作用
      * 获取剪切板链接
      */
     private void getClipContent() {
@@ -419,11 +438,13 @@ public class MainActivity extends BaseActivity<MainViewModel, ActivityMainBindin
     }
 
 
+    /*和onBackPressed()区别*/
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             if (bindingView.drawerLayout.isDrawerOpen(GravityCompat.START)) {
                 bindingView.drawerLayout.closeDrawer(GravityCompat.START);
+                Log.e(TAG, "onKeyDown: ++++");
             } else {
                 // 不退出程序，进入后台
                 moveTaskToBack(true);
@@ -441,11 +462,12 @@ public class MainActivity extends BaseActivity<MainViewModel, ActivityMainBindin
                 .subscribe(new Consumer<RxBusBaseMessage>() {
                     @Override
                     public void accept(RxBusBaseMessage rxBusBaseMessage) throws Exception {
-                        setCurrentItem(2);
+                        setCurrentItem(2);  // 不太懂 problem TODO
                     }
                 });
         addSubscription(subscribe);
-        Disposable subscribe2 = RxBus.getDefault().toObservable(RxCodeConstants.LOGIN, Boolean.class)
+        //登录
+        Disposable subscribe2 = RxBus.getDefault().toObservable(RxCodeConstants.LOGIN, Boolean.class)  // 不太懂 problem TODO
                 .subscribe(new Consumer<Boolean>() {
                     @Override
                     public void accept(Boolean isLogin) throws Exception {
@@ -465,7 +487,7 @@ public class MainActivity extends BaseActivity<MainViewModel, ActivityMainBindin
         isLaunch = false;
         if (isClickCloseApp) {
             isClickCloseApp = false;
-            // 杀死该应用进程 需要权限; 如果不控制会影响切换深色模式重启
+            // 杀死该应用进程 需要权限; 如果不控制会影响切换深色模式重启   TODO problem
             android.os.Process.killProcess(android.os.Process.myPid());
         }
     }
@@ -474,6 +496,8 @@ public class MainActivity extends BaseActivity<MainViewModel, ActivityMainBindin
         context.startActivity(new Intent(context, MainActivity.class));
     }
 
+
+    // 在CommonTabPagerAdapter 中getItem调用
     @org.jetbrains.annotations.Nullable
     @Override
     public Fragment getFragment(int position) {
