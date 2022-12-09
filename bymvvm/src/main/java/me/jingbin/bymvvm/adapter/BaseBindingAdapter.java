@@ -28,6 +28,7 @@ public abstract class BaseBindingAdapter<T, B extends ViewDataBinding> extends B
         mLayoutId = layoutId;
     }
 
+    /*onBindViewHolder在父类*/
     @NonNull
     @Override
     public BaseBindingHolder<T, B> onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

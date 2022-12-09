@@ -72,9 +72,9 @@ public class WanFindFragment extends BaseFragment<WanFindViewModel, FragmentWanF
     public void onResume() {
         super.onResume();
         if (mIsFirst) {
-            showLoading();
-            initRefreshView();
-            initRxBus();
+            showLoading();// 显示加载状态
+            initRefreshView();  // 左右RV设置Adapter 、监听、LiveData数据变化
+            initRxBus();        // 体系页定制发现内容处理
             bindingView.rvWxarticle.postDelayed(this::getData, 150);
             mIsFirst = false;
         }
@@ -92,39 +92,45 @@ public class WanFindFragment extends BaseFragment<WanFindViewModel, FragmentWanF
     }
 
     private void initRefreshView() {
+        // 左边RV设置Adapter
         LinearLayoutManager layoutManager = new LinearLayoutManager(activity);
-        bindingView.rvWxarticle.setLayoutManager(layoutManager);
+        bindingView.rvWxarticle.setLayoutManager(layoutManager);  // 左边recyclerView线性布局
         wxArticleAdapter = new WxArticleAdapter(activity);
         bindingView.rvWxarticle.setAdapter(wxArticleAdapter);
 
+        // 右边recyclerView设置刷新 和 Adapter
         RefreshHelper.initLinear(bindingView.recyclerView, true, 1);
         mContentAdapter = new WanAndroidAdapter(activity);
         mContentAdapter.setNoShowChapterName();
 //        mContentAdapter.setNoShowAuthorName();
         bindingView.recyclerView.setAdapter(mContentAdapter);
 
+        // 左边RV 监听
         wxArticleAdapter.setOnSelectListener(new WxArticleAdapter.OnSelectListener() {
             @Override
             public void onSelected(int position) {
                 selectItem(position);
             }
         });
+        //右边RV 监听
         bindingView.recyclerView.setOnLoadMoreListener(new ByRecyclerView.OnLoadMoreListener() {
             @Override
-            public void onLoadMore() {
+            public void onLoadMore() {  // 加载更多
                 int page = viewModel.getPage();
                 viewModel.setPage(++page);
                 viewModel.getWxarticleDetail(wxArticleId);
             }
         }, 300);
+
         bindingView.recyclerView.setOnRefreshListener(new ByRecyclerView.OnRefreshListener() {
             @Override
-            public void onRefresh() {
+            public void onRefresh() {  // 刷新
                 viewModel.setPage(1);
                 viewModel.getWxarticleDetail(wxArticleId);
             }
         }, 300);
-        onObserveViewModel();
+
+        onObserveViewModel();   // LiveData 观察数据
     }
 
     private void onObserveViewModel() {
@@ -146,7 +152,7 @@ public class WanFindFragment extends BaseFragment<WanFindViewModel, FragmentWanF
             public void onChanged(@Nullable List<ArticlesBean> list) {
                 showContentView();
                 if (list != null && list.size() > 0) {
-                    if (viewModel.getPage() == 1) {
+                    if (viewModel.getPage() == 1) {   // TODO 没懂这段操作
                         bindingView.recyclerView.setLoadMoreEnabled(true);
                         bindingView.recyclerView.setRefreshEnabled(true);
                         bindingView.recyclerView.setFootViewEnabled(false);
@@ -176,13 +182,14 @@ public class WanFindFragment extends BaseFragment<WanFindViewModel, FragmentWanF
         });
     }
 
+    // 左边RV选中后显示 右边RV内容
     private void selectItem(int position) {
         if (position < wxArticleAdapter.getData().size()) {
             wxArticleId = wxArticleAdapter.getData().get(position).getId();
             wxArticleAdapter.setId(wxArticleId);
             viewModel.setPage(1);
             viewModel.getWxarticleDetail(wxArticleId);
-            bindingView.recyclerView.setRefreshEnabled(true);
+            bindingView.recyclerView.setRefreshEnabled(true);  // 右边RV刷新
         }
         wxArticleAdapter.notifyItemChanged(currentPosition);
         currentPosition = position;
@@ -190,20 +197,21 @@ public class WanFindFragment extends BaseFragment<WanFindViewModel, FragmentWanF
 
     @Override
     protected void onRefresh() {
-        viewModel.getWxArticle();
+        viewModel.getWxArticle();   // 左边RV获取公众号列表
     }
 
     /**
-     * 知识体系页更改发现页内容
+     * 知识体系页 更改 发现页 内容
+     * 在TreeFragment.java中发送
      */
     private void initRxBus() {
-        Disposable subscribe = RxBus.getDefault().toObservable(RxCodeConstants.FIND_CUSTOM, Integer.class)
+        Disposable subscribe = RxBus.getDefault().toObservable(RxCodeConstants.FIND_CUSTOM, Integer.class)  // TODO Integer.class 什么意思
                 .subscribe(new Consumer<Integer>() {
                     @Override
                     public void accept(Integer integer) throws Exception {
                         if (integer != null) {
                             if (!mIsFirst) {
-                                TreeBean treeData = DataUtil.getTreeData(activity);
+                                TreeBean treeData = DataUtil.getTreeData(activity);   // 发现fragment和体系fragment之间通信
                                 if (viewModel.handleCustomData(treeData, integer)) {
                                     ToastUtil.showToastLong("发现页内容已改为\"" + treeData.getData().get(integer).getName() + "\"");
                                 }

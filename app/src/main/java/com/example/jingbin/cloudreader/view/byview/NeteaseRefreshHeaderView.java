@@ -21,6 +21,7 @@ import me.jingbin.library.BaseRefreshHeader;
 
 /**
  * @author jingbin
+ * 下拉刷新
  */
 public class NeteaseRefreshHeaderView extends LinearLayout implements BaseRefreshHeader {
 

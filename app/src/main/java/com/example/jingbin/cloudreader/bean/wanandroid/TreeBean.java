@@ -16,7 +16,7 @@ import java.util.List;
 
 public class TreeBean extends BaseObservable implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;  // TODO 这个一定要吗
     private int errorCode;
     private String errorMsg;
     private List<TreeItemBean> data;

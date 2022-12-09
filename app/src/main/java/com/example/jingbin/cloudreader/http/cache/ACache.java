@@ -49,6 +49,7 @@ import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * @author Michael Yang（www.yangfuhai.com） update at 2013.08.07
+ * TODO 缓存
  */
 public class ACache {
 	public static final int TIME_HOUR = 60 * 60;
@@ -84,7 +85,7 @@ public class ACache {
 		}
 		return manager;
 	}
-
+	/**********************************************************************************/
 	private static String myPid() {
 		return "_" + android.os.Process.myPid();
 	}
@@ -106,7 +107,7 @@ public class ACache {
 	 * @param key
 	 *            保存的key
 	 * @param value
-	 *            保存的String数据
+	 *            保存的String数据   （这个string包含了时间）
 	 */
 	public void put(String key, String value) {
 		File file = mCache.newFile(key);

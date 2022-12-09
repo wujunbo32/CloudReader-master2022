@@ -33,6 +33,7 @@ public class ArticlesBean {
      * zan : 0
      */
 
+    // 右边RV标题对应内容
     private String apkLink;
     private String author;
     private int chapterId;
@@ -55,7 +56,7 @@ public class ArticlesBean {
     private boolean fresh;
     private boolean isShowImage = true;   // 你自己给初始化了，网络返回数据没有这个吗？TODO
     // 分类name
-    private String navigationName;
+    private String navigationName;   // 自己添加的吧
     // 可能没有author 有 shareUser
     private String shareUser;
 

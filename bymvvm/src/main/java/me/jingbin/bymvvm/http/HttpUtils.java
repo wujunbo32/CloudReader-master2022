@@ -77,6 +77,7 @@ public class HttpUtils {
         return instance;
     }
 
+    // 获取application的context
     public void init(Context context) {
         this.context = context;
     }
@@ -112,7 +113,9 @@ public class HttpUtils {
         }
     }
 
+
     // 你封个毛呀，搞这么多层  还getOkClient（）来调用
+    // 缓存 设置
     private OkHttpClient getUnsafeOkHttpClient() {
         try {
             // Install the all-trusting trust manager TLS

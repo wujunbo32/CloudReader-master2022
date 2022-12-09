@@ -62,33 +62,33 @@ public class NavigationViewModel extends BaseViewModel {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Consumer<NaviJsonBean>() {
                     @Override
-                    public void accept(NaviJsonBean naviJsonBean) throws Exception {
+                    public void accept(NaviJsonBean naviJsonBean) throws Exception {  //NaviJsonBean数据总集合
                         if (naviJsonBean != null
                                 && naviJsonBean.getData() != null
-                                && naviJsonBean.getData().size() > 0) {
+                                && naviJsonBean.getData().size() > 0) {  // 左边RV的标题数据判断
 
                             // title
-                            dataTitle.setValue(naviJsonBean.getData());
+                            dataTitle.setValue(naviJsonBean.getData()); // 标题
                             // content
-                            ArrayList<ArticlesBean> list = new ArrayList<>();
+                            ArrayList<ArticlesBean> list = new ArrayList<>();  //ArticlesBean  右边RV标题对应内容
                             // content部分对应分类的position
-                            ArrayList<Integer> positions = new ArrayList<>();
-                            for (int i = 0; i < naviJsonBean.getData().size(); i++) {
-                                NaviJsonBean.DataBean dataBean = naviJsonBean.getData().get(i);
-                                ArticlesBean bean = new ArticlesBean();
-                                bean.setNavigationName(dataBean.getName());
-                                positions.add(list.size());
+                            ArrayList<Integer> positions = new ArrayList<>();  // 记录对应标题内容的子项的数目
+                            for (int i = 0; i < naviJsonBean.getData().size(); i++) {  // 遍历标题
+                                NaviJsonBean.DataBean dataBean = naviJsonBean.getData().get(i);  // 得到具体位置的标题数据集
+                                ArticlesBean bean = new ArticlesBean();  // 标题对应内容，但是好像下面只初始化了自己添加的字段标题
+                                bean.setNavigationName(dataBean.getName());  // 把dataBean的标题提取出来，放到内容ArticlesBean中自己添加的标题字段中保存
+                                positions.add(list.size());  // 什么作用 TODO problem  应该是对应内容中每个子项的数目
                                 if (i != 0) {
                                     // 最后一个item可能有一个或两个
-                                    hashMap.put(list.size() - 1, i - 1);
+                                    hashMap.put(list.size() - 1, i - 1);  // 不懂 TODO problem
                                     hashMap.put(list.size() - 2, i - 1);
                                 }
                                 hashMap.put(list.size(), i);
-                                list.add(bean);
-                                list.addAll(dataBean.getArticles());
+                                list.add(bean); // 添加标题 但ArticlesBean 其它字段没有值
+                                list.addAll(dataBean.getArticles()); // 添加上面标题对应的内容（但标题内容为空） ；就形成了右边RV的数据表现形式
                             }
-                            data.setValue(list);
-                            titlePositions.setValue(positions);
+                            data.setValue(list);   // 内容数据设置，包含了自定义个标题字段设置
+                            titlePositions.setValue(positions);  // 是个数吗 ？ TODO problem
                         } else {
                             data.setValue(null);
                             dataTitle.setValue(null);

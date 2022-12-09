@@ -12,6 +12,7 @@ import me.jingbin.bymvvm.utils.CommonUtils;
 
 /**
  * Created by jingbin on 2019/9/29.
+ * 发现 recyclerView 设置 Adapter
  */
 
 public class WxArticleAdapter extends BaseBindingAdapter<WxarticleItemBean, ItemWxarticleBinding> {
@@ -22,7 +23,7 @@ public class WxArticleAdapter extends BaseBindingAdapter<WxarticleItemBean, Item
     private final Context context;
 
     public WxArticleAdapter(Context context) {
-        super(R.layout.item_wxarticle);
+        super(R.layout.item_wxarticle);  // 子项
         this.context = context;
     }
 
@@ -30,7 +31,7 @@ public class WxArticleAdapter extends BaseBindingAdapter<WxarticleItemBean, Item
     protected void bindView(BaseBindingHolder holder, WxarticleItemBean dataBean, ItemWxarticleBinding binding, int position) {
         if (dataBean != null) {
 
-            if (dataBean.getId() == id) {
+            if (dataBean.getId() == id) {  //选中状态改变
                 binding.tvTitle.setTextColor(CommonUtils.getColor(context, R.color.colorTheme));
                 binding.viewLine.setBackgroundColor(CommonUtils.getColor(context, R.color.colorTheme));
             } else {
@@ -38,18 +39,18 @@ public class WxArticleAdapter extends BaseBindingAdapter<WxarticleItemBean, Item
                 binding.viewLine.setBackgroundColor(CommonUtils.getColor(context, R.color.colorSubtitle));
             }
             binding.setBean(dataBean);
-            binding.clWxarticle.setOnClickListener(v -> {
+            binding.clWxarticle.setOnClickListener(v -> {  // clWxarticle 用子项ConstraintLayout布局来响应
                 if (selectPosition != position) {
-                    lastPosition = selectPosition;
+                    lastPosition = selectPosition;  // position实时选中位置和保存的selectPosition不一样，lastPosition更新
 
-                    id = dataBean.getId();
+                    id = dataBean.getId();   // 这个id是用来防错位加载？？？TODO problem
                     selectPosition = position;
 
-                    notifyItemChanged(lastPosition);
+                    notifyItemChanged(lastPosition);   // 更新两个
                     notifyItemChanged(selectPosition);
 
                     if (listener != null) {
-                        listener.onSelected(position);
+                        listener.onSelected(position);  // 在WanFindFragment.java中实现接口
                     }
                 }
             });

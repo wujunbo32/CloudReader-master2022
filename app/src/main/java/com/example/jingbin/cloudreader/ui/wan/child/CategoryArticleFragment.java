@@ -2,9 +2,13 @@ package com.example.jingbin.cloudreader.ui.wan.child;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.MenuItem;
+import android.view.View;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
@@ -15,10 +19,12 @@ import com.example.jingbin.cloudreader.databinding.FragmentCategoryArticleBindin
 import com.example.jingbin.cloudreader.view.byview.NeteaseLoadMoreView;
 import com.example.jingbin.cloudreader.view.byview.NeteaseRefreshHeaderView;
 import com.example.jingbin.cloudreader.viewmodel.wan.WanAndroidListViewModel;
+import com.google.android.material.snackbar.Snackbar;
 
 import me.jingbin.bymvvm.base.BaseFragment;
 import me.jingbin.library.ByRecyclerView;
 import me.jingbin.library.decoration.SpacesItemDecoration;
+import shark.AndroidObjectInspectors;
 
 /**
  * @author jingbin
@@ -48,13 +54,16 @@ public class CategoryArticleFragment extends BaseFragment<WanAndroidListViewMode
         activity = getActivity();
     }
 
+
+
+    // treeItemBean.children[position].id, treeItemBean.children[position].name  true
     public static CategoryArticleFragment newInstance(int categoryId, String categoryName, boolean isLoad) {
         CategoryArticleFragment fragment = new CategoryArticleFragment();
         Bundle args = new Bundle();
         args.putInt(ID, categoryId);
         args.putString(NAME, categoryName);
         args.putBoolean(IS_REFRESH, isLoad);
-        fragment.setArguments(args);
+        fragment.setArguments(args);  // 传这个参数什么作用 TODO problem
         return fragment;
     }
 
@@ -83,6 +92,7 @@ public class CategoryArticleFragment extends BaseFragment<WanAndroidListViewMode
             getHomeList();
             mIsFirst = false;
         }
+
     }
 
     private void initRefreshView() {
@@ -90,8 +100,8 @@ public class CategoryArticleFragment extends BaseFragment<WanAndroidListViewMode
         bindingView.recyclerView.setLayoutManager(new LinearLayoutManager(activity));
         bindingView.recyclerView.setItemAnimator(null);
         bindingView.recyclerView.addItemDecoration(new SpacesItemDecoration(activity).setHeaderNoShowDivider(isRefresh ? 1 : 0));
-        bindingView.recyclerView.setRefreshHeaderView(new NeteaseRefreshHeaderView(activity));
-        bindingView.recyclerView.setLoadingMoreView(new NeteaseLoadMoreView(activity));
+        bindingView.recyclerView.setRefreshHeaderView(new NeteaseRefreshHeaderView(activity));  // 下拉刷新
+        bindingView.recyclerView.setLoadingMoreView(new NeteaseLoadMoreView(activity));  // 加载更多
         bindingView.recyclerView.setAdapter(mAdapter);
 
         bindingView.recyclerView.setOnLoadMoreListener(new ByRecyclerView.OnLoadMoreListener() {

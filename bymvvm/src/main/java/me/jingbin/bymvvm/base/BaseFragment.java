@@ -59,13 +59,13 @@ public abstract class BaseFragment<VM extends AndroidViewModel, SV extends ViewD
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View inflate = inflater.inflate(R.layout.fragment_base, null);
+        View inflate = inflater.inflate(R.layout.fragment_base, null);  //加载失败  加载中  数据为空
         bindingView = DataBindingUtil.inflate(activity.getLayoutInflater(), setContent(), null, false);
         RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         bindingView.getRoot().setLayoutParams(params);
         RelativeLayout mContainer = inflate.findViewById(R.id.container);
-        mContainer.addView(bindingView.getRoot());  //添加组合布局
-        bindingView.getRoot().setVisibility(View.GONE);
+        mContainer.addView(bindingView.getRoot());  //添加组合布局  container在fragment_base.xml中， fragment_wan_android.xml添加到container中
+        bindingView.getRoot().setVisibility(View.GONE);  // 不可见
         return inflate;
     }
 
@@ -128,6 +128,7 @@ public abstract class BaseFragment<VM extends AndroidViewModel, SV extends ViewD
 
     /**
      * 加载失败后点击后的操作
+     * 子类重写了
      */
     protected void onRefresh() {
 

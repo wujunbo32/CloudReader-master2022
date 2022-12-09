@@ -33,40 +33,41 @@ public class TreeAdapter extends BaseRecyclerAdapter<TreeItemBean> {
     private LayoutInflater mInflater = null;
     private Queue<TextView> mFlexItemTextViewCaches = new LinkedList<>();
     private boolean isSelect = false;
-    private int selectedPosition = -1;
+    private int selectedPosition = -1;   // TODO 什么作用
     private final Context context;
 
     public TreeAdapter(Context context) {
-        super(R.layout.item_tree);
+        super(R.layout.item_tree);   // 父类有两个构造方法
         this.context = context;
     }
 
     @Override
     protected void bindView(BaseByViewHolder<TreeItemBean> holder, TreeItemBean dataBean, int position) {
         if (dataBean != null) {
-            TextView tvTreeTitle = holder.getView(R.id.tv_tree_title);
-            FlexboxLayout flTree = holder.getView(R.id.fl_tree);
-            String name = DataUtil.getHtmlString(dataBean.getName());
-            if (isSelect) {
+            TextView tvTreeTitle = holder.getView(R.id.tv_tree_title);  // 标题
+            FlexboxLayout flTree = holder.getView(R.id.fl_tree);        // 流式布局
+            String name = DataUtil.getHtmlString(dataBean.getName());  // TODO problem
+            if (isSelect) {  // TODO   这个是两个界面切换标志   发现页内容定制
                 flTree.setVisibility(View.GONE);
                 if (selectedPosition == position) {
-                    name = name + "     ★★★";
+                    name = name + "     ★★★";  // 只有一个子项名字改变
                     tvTreeTitle.setTextColor(CommonUtils.getColor(context, R.color.colorTheme));
                 } else {
                     tvTreeTitle.setTextColor(CommonUtils.getColor(context, R.color.colorContent));
                 }
-            } else {
+            } else {  // 选择类别
                 tvTreeTitle.setTextColor(CommonUtils.getColor(context, R.color.colorContent));
                 flTree.setVisibility(View.VISIBLE);
                 for (int i = 0; i < dataBean.getChildren().size(); i++) {
                     WxarticleItemBean childItem = dataBean.getChildren().get(i);
                     TextView child = createOrGetCacheFlexItemTextView(flTree);
-                    child.setText(DataUtil.getHtmlString(childItem.getName()));
+                    child.setText(DataUtil.getHtmlString(childItem.getName()));  // 设置流式布局TextView内容
+                    // 把点击获取的内容在CategoryDetailActivity中展示
                     child.setOnClickListener(v -> CategoryDetailActivity.start(v.getContext(), childItem.getId(), dataBean));
-                    flTree.addView(child);
+                    flTree.addView(child);   // 添加到FlexboxLayout中
                 }
             }
-            tvTreeTitle.setText(ThinBoldSpan.getDefaultSpanString(tvTreeTitle.getContext(), name));
+            tvTreeTitle.setText(ThinBoldSpan.getDefaultSpanString(tvTreeTitle.getContext(), name));  // 设置标题内容，两个界面标题共用
         }
     }
 
@@ -79,12 +80,13 @@ public class TreeAdapter extends BaseRecyclerAdapter<TreeItemBean> {
         FlexboxLayout fbl = holder.getView(R.id.fl_tree);
         if (fbl != null) {
             for (int i = 0; i < fbl.getChildCount(); i++) {
-                mFlexItemTextViewCaches.offer((TextView) fbl.getChildAt(i));
+                mFlexItemTextViewCaches.offer((TextView) fbl.getChildAt(i));   // 队列添加元素
             }
-            fbl.removeAllViews();
+            fbl.removeAllViews();  // TODO problem
         }
     }
 
+    // 队列里取出头，为空就创建（但是好像没加入队列），不为空就返回
     private TextView createOrGetCacheFlexItemTextView(FlexboxLayout fbl) {
         TextView tv = mFlexItemTextViewCaches.poll();
         if (tv != null) {
@@ -93,7 +95,7 @@ public class TreeAdapter extends BaseRecyclerAdapter<TreeItemBean> {
         if (mInflater == null) {
             mInflater = LayoutInflater.from(fbl.getContext());
         }
-        return (TextView) mInflater.inflate(R.layout.layout_tree_tag, fbl, false);
+        return (TextView) mInflater.inflate(R.layout.layout_tree_tag, fbl, false);  //文字背景圆形图， 但是好像没加入队列
     }
 
     public void setSelect(boolean isSelect) {

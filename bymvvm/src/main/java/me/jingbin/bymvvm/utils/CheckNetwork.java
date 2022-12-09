@@ -4,6 +4,19 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
+import java.io.File;
+import java.util.concurrent.TimeUnit;
+
+import okhttp3.Cache;
+import okhttp3.CacheControl;
+import okhttp3.Interceptor;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 /**
  * 用于判断是不是联网状态
  *
@@ -48,3 +61,6 @@ public class CheckNetwork {
     }
 
 }
+
+
+

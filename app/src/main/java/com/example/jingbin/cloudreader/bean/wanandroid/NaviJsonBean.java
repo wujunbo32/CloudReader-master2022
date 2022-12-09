@@ -38,7 +38,7 @@ public class NaviJsonBean {
         this.data = data;
     }
 
-    public static class DataBean {
+    public static class DataBean {  //左RV标题列表数据
 
         private boolean selected;
         private int cid;

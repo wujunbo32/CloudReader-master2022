@@ -17,6 +17,7 @@ import me.jingbin.library.BaseLoadMore;
 
 /**
  * @author jingbin
+ * 加载更多
  */
 public class NeteaseLoadMoreView extends LinearLayout implements BaseLoadMore {
 

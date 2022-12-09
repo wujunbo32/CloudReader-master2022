@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android_project/temp/temp/CloudReader-master/app/src/main/res/drawable-v21/shape_bg_publish.xml" value="0.14791666666666667" />
+        <entry key="..\:/Android_project/temp/temp/CloudReader-master/app/src/main/res/drawable/ripple_tab_bg.xml" value="0.2734375" />
         <entry key="..\:/Android_project/temp/temp/CloudReader-master/app/src/main/res/drawable/selector_collect_check.xml" value="0.2734375" />
         <entry key="..\:/Android_project/temp/temp/CloudReader-master/app/src/main/res/drawable/shape_banner_select.xml" value="0.2734375" />
         <entry key="..\:/Android_project/temp/temp/CloudReader-master/app/src/main/res/drawable/shape_banner_unselect.xml" value="0.2734375" />
@@ -11,6 +12,9 @@
         <entry key="..\:/Android_project/temp/temp/CloudReader-master/app/src/main/res/drawable/shape_bg_loading.xml" value="0.1" />
         <entry key="..\:/Android_project/temp/temp/CloudReader-master/app/src/main/res/drawable/shape_bg_publish.xml" value="0.14791666666666667" />
         <entry key="..\:/Android_project/temp/temp/CloudReader-master/app/src/main/res/drawable/shape_notclickbg.xml" value="0.2734375" />
+        <entry key="..\:/Android_project/temp/temp/CloudReader-master/app/src/main/res/drawable/shape_ripple_tag_bg.xml" value="0.2734375" />
+        <entry key="..\:/Android_project/temp/temp/CloudReader-master/app/src/main/res/drawable/shape_tab_indicator.xml" value="0.2734375" />
+        <entry key="..\:/Android_project/temp/temp/CloudReader-master/app/src/main/res/layout/activity_film_detail.xml" value="0.21875" />
         <entry key="..\:/Android_project/temp/temp/CloudReader-master/app/src/main/res/layout/activity_main.xml" value="0.25729166666666664" />
         <entry key="..\:/Android_project/temp/temp/CloudReader-master/app/src/main/res/layout/activity_my_collect.xml" value="0.26621847886098404" />
         <entry key="..\:/Android_project/temp/temp/CloudReader-master/app/src/main/res/layout/activity_nav_about.xml" value="0.4033613316075515" />
@@ -21,16 +25,30 @@
         <entry key="..\:/Android_project/temp/temp/CloudReader-master/app/src/main/res/layout/app_bar_main.xml" value="0.25729166666666664" />
         <entry key="..\:/Android_project/temp/temp/CloudReader-master/app/src/main/res/layout/content_scrolling.xml" value="0.33599202392821537" />
         <entry key="..\:/Android_project/temp/temp/CloudReader-master/app/src/main/res/layout/dialog_layout_private.xml" value="0.13177083333333334" />
+        <entry key="..\:/Android_project/temp/temp/CloudReader-master/app/src/main/res/layout/fragment_android.xml" value="0.25729166666666664" />
+        <entry key="..\:/Android_project/temp/temp/CloudReader-master/app/src/main/res/layout/fragment_category_article.xml" value="0.25729166666666664" />
         <entry key="..\:/Android_project/temp/temp/CloudReader-master/app/src/main/res/layout/fragment_content.xml" value="0.25729166666666664" />
+        <entry key="..\:/Android_project/temp/temp/CloudReader-master/app/src/main/res/layout/fragment_navi.xml" value="0.25729166666666664" />
         <entry key="..\:/Android_project/temp/temp/CloudReader-master/app/src/main/res/layout/fragment_square.xml" value="0.25729166666666664" />
         <entry key="..\:/Android_project/temp/temp/CloudReader-master/app/src/main/res/layout/fragment_wan_android.xml" value="0.20168066580377575" />
+        <entry key="..\:/Android_project/temp/temp/CloudReader-master/app/src/main/res/layout/fragment_wan_find.xml" value="0.25729166666666664" />
+        <entry key="..\:/Android_project/temp/temp/CloudReader-master/app/src/main/res/layout/header_item_tree.xml" value="0.25729166666666664" />
         <entry key="..\:/Android_project/temp/temp/CloudReader-master/app/src/main/res/layout/header_share_article.xml" value="0.25729166666666664" />
         <entry key="..\:/Android_project/temp/temp/CloudReader-master/app/src/main/res/layout/header_wan_android.xml" value="0.25729166666666664" />
         <entry key="..\:/Android_project/temp/temp/CloudReader-master/app/src/main/res/layout/home_middle_layout.xml" value="0.26621847886098404" />
+        <entry key="..\:/Android_project/temp/temp/CloudReader-master/app/src/main/res/layout/item_android.xml" value="0.25729166666666664" />
         <entry key="..\:/Android_project/temp/temp/CloudReader-master/app/src/main/res/layout/item_banner_wanandroid.xml" value="0.25729166666666664" />
+        <entry key="..\:/Android_project/temp/temp/CloudReader-master/app/src/main/res/layout/item_category_article.xml" value="0.25729166666666664" />
+        <entry key="..\:/Android_project/temp/temp/CloudReader-master/app/src/main/res/layout/item_navigation.xml" value="0.25729166666666664" />
+        <entry key="..\:/Android_project/temp/temp/CloudReader-master/app/src/main/res/layout/item_navigation_content.xml" value="0.25729166666666664" />
+        <entry key="..\:/Android_project/temp/temp/CloudReader-master/app/src/main/res/layout/item_tree.xml" value="0.25729166666666664" />
         <entry key="..\:/Android_project/temp/temp/CloudReader-master/app/src/main/res/layout/item_wan_android.xml" value="0.4033613316075515" />
         <entry key="..\:/Android_project/temp/temp/CloudReader-master/app/src/main/res/layout/item_wan_android_skeleton.xml" value="0.25729166666666664" />
+        <entry key="..\:/Android_project/temp/temp/CloudReader-master/app/src/main/res/layout/item_wxarticle.xml" value="0.25729166666666664" />
+        <entry key="..\:/Android_project/temp/temp/CloudReader-master/app/src/main/res/layout/layout_tree_tag.xml" value="0.25729166666666664" />
+        <entry key="..\:/Android_project/temp/temp/CloudReader-master/app/src/main/res/layout/load_more_view_netease.xml" value="0.25729166666666664" />
         <entry key="..\:/Android_project/temp/temp/CloudReader-master/app/src/main/res/layout/nav_header_main.xml" value="0.26621847886098404" />
+        <entry key="..\:/Android_project/temp/temp/CloudReader-master/app/src/main/res/layout/refresh_view_netease.xml" value="0.7260503968935927" />
         <entry key="..\:/Android_project/temp/temp/CloudReader-master/app/src/main/res/menu/main.xml" value="0.25729166666666664" />
         <entry key="..\:/Android_project/temp/temp/CloudReader-master/app/src/main/res/menu/menu_web.xml" value="0.25729166666666664" />
         <entry key="..\:/Android_project/temp/temp/CloudReader-master/bymvvm/src/main/res/layout/activity_base.xml" value="0.25729166666666664" />

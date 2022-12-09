@@ -59,8 +59,12 @@ import com.example.jingbin.cloudreader.viewmodel.wan.MainViewModel;
 
 import java.util.Arrays;
 
+import io.reactivex.Observable;
+import io.reactivex.Scheduler;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
+import io.reactivex.internal.operators.observable.ObservableAmb;
+import io.reactivex.schedulers.Schedulers;
 import me.jingbin.bymvvm.base.BaseActivity;
 import me.jingbin.bymvvm.rxbus.RxBus;
 import me.jingbin.bymvvm.rxbus.RxBusBaseMessage;
@@ -76,6 +80,7 @@ import me.jingbin.bymvvm.utils.StatusBarUtil;
  * <a href="http://www.jianshu.com/u/e43c6e979831">Contact me</a>
  */
 public class MainActivity extends BaseActivity<MainViewModel, ActivityMainBinding> implements View.OnClickListener, CommonTabPagerAdapter.TabPagerListener {
+
 
     private static final String TAG = "MainActivity";
     public static boolean isLaunch;
@@ -96,7 +101,10 @@ public class MainActivity extends BaseActivity<MainViewModel, ActivityMainBindin
         initContentFragment();   // fragment和viewpager  初始化Viewpager，设置Adapter, getItem中根据position返回 WanFragment、WanCenterFragment、WanProjectFragment                                                                      WanCenterFragment、WanProjectFragment
         initDrawerLayout();   // 初始化 完成数据绑定 （登录用户名，等级 排名）
         initRxBus();
+
+
     }
+
 
     @Override
     protected void initStatusBar() {
@@ -398,6 +406,7 @@ public class MainActivity extends BaseActivity<MainViewModel, ActivityMainBindin
         } else {
             super.onBackPressed();
         }
+
     }
 
     /**
@@ -497,17 +506,18 @@ public class MainActivity extends BaseActivity<MainViewModel, ActivityMainBindin
     }
 
 
+
     // 在CommonTabPagerAdapter 中getItem调用
     @org.jetbrains.annotations.Nullable
     @Override
     public Fragment getFragment(int position) {
         switch (position) {
             case 0:
-                return new WanFragment();
+                return new WanFragment();  // 第一个图标对应fragment
             case 1:
-                return new WanCenterFragment();
+                return new WanCenterFragment();  // 第二个图标对应fragment
             case 2:
-                return new WanProjectFragment();
+                return new WanProjectFragment();  // 第三个图标对应fragment
         }
         return new WanFragment();
     }

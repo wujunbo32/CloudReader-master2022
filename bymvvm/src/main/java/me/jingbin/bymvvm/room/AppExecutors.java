@@ -30,6 +30,8 @@ import java.util.concurrent.Executors;
  * <p>
  * Grouping tasks like this avoids the effects of task starvation (e.g. disk reads don't User behind
  * webservice requests).
+ * 这里管理了磁盘IO、网络IO、主线程
+ * TODO 什么意思
  */
 public class AppExecutors {
 

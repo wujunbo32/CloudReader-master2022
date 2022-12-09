@@ -50,7 +50,7 @@ class WendaFragment : BaseFragment<WanCenterViewModel, FragmentAndroidBinding>()
     }
 
     private fun initRv() {
-        RefreshHelper.initLinear(bindingView.xrvAndroid, true, 1)
+        RefreshHelper.initLinear(bindingView.xrvAndroid, true, 1)  // TODO problem
         mAdapter = WanAndroidAdapter(activity)
         mAdapter.isNoShowChapterName = true
         mAdapter.isNoImage = false

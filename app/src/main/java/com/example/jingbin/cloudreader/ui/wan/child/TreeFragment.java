@@ -39,7 +39,7 @@ public class TreeFragment extends BaseFragment<TreeViewModel, FragmentWanAndroid
 
     @Override
     public int setContent() {
-        return R.layout.fragment_wan_android;
+        return R.layout.fragment_wan_android;  // SwipeRefreshLayout  ByRecyclerView
     }
 
     @Override
@@ -61,60 +61,68 @@ public class TreeFragment extends BaseFragment<TreeViewModel, FragmentWanAndroid
     public void onResume() {
         super.onResume();
         if (mIsFirst) {
-            showLoading();
-            initRefreshView();
-            getTree();
+            showLoading();  // 显示加载中状态
+            initRefreshView(); // 刷新  头标签  点击事件
+            getTree();     // 获取数据并监听变化
             mIsFirst = false;
         }
     }
 
     private void initRefreshView() {
-        RefreshHelper.setSwipeRefreshView(bindingView.srlWan);
+        RefreshHelper.setSwipeRefreshView(bindingView.srlWan);  // 刷新
         bindingView.srlWan.setOnRefreshListener(() -> bindingView.srlWan.postDelayed(this::getTree, 150));
+
         LinearLayoutManager layoutManager = new LinearLayoutManager(activity);
         bindingView.xrvWan.setLayoutManager(layoutManager);
         mTreeAdapter = new TreeAdapter(activity);
         bindingView.xrvWan.setAdapter(mTreeAdapter);
+
+        // 头标签
         HeaderItemTreeBinding oneBinding = DataBindingUtil.inflate(getLayoutInflater(), R.layout.header_item_tree, null, false);
         bindingView.xrvWan.addHeaderView(oneBinding.getRoot());
+
         oneBinding.tvPosition.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!mTreeAdapter.isSelect()) {
+                if (!mTreeAdapter.isSelect()) {  // 一开始是false， 进入这个方法说明已经点击
                     GridLayoutManager layoutManager = new GridLayoutManager(activity, 2);
                     bindingView.xrvWan.setLayoutManager(layoutManager);
                     oneBinding.tvPosition.setText("选择类别");
                     mTreeAdapter.setSelect(true);
-                    mTreeAdapter.notifyDataSetChanged();
+                    mTreeAdapter.notifyDataSetChanged();  // 更新数据改变内容
                     bindingView.xrvWan.addItemDecoration(new SpacesItemDecoration(activity).setNoShowDivider(1, 0).setDrawable(R.drawable.shape_line));
                 } else {
                     LinearLayoutManager layoutManager = new LinearLayoutManager(activity);
                     bindingView.xrvWan.setLayoutManager(layoutManager);
                     oneBinding.tvPosition.setText("发现页内容订制");
                     mTreeAdapter.setSelect(false);
-                    mTreeAdapter.notifyDataSetChanged();
+                    mTreeAdapter.notifyDataSetChanged();// 更新数据改变内容
                     if (bindingView.xrvWan.getItemDecorationCount() > 0) {
-                        bindingView.xrvWan.removeItemDecorationAt(0);
+                        bindingView.xrvWan.removeItemDecorationAt(0);   // 什么意思 TODO problem
                     }
                 }
             }
         });
+        // 子项点击
         bindingView.xrvWan.setOnItemClickListener(new OnItemFilterClickListener() {
             @Override
             public void onSingleClick(View v, int position) {
-                if (mTreeAdapter.isSelect()) {
-                    if (mTreeAdapter.getSelectedPosition() == position) {
+                if (mTreeAdapter.isSelect()) {  // 已经切换到定制页
+                    if (mTreeAdapter.getSelectedPosition() == position) {  // 重复点击
                         ToastUtil.showToastLong("当前已经是\"" + mTreeAdapter.getData().get(position).getName() + "\"");
-                        return;
+                        return;   // 重复点击 不执行下面内容
                     }
+
+                    // 不是重复点击，选择后，更新数据，自动切换RV内容到相应位置，
                     LinearLayoutManager layoutManager = new LinearLayoutManager(activity);
                     bindingView.xrvWan.setLayoutManager(layoutManager);
                     oneBinding.tvPosition.setText("发现页内容订制");
                     mTreeAdapter.setSelect(false);
                     mTreeAdapter.notifyDataSetChanged();
                     if (bindingView.xrvWan.getItemDecorationCount() > 0) {
-                        bindingView.xrvWan.removeItemDecorationAt(0);
+                        bindingView.xrvWan.removeItemDecorationAt(0);  // 什么作用
                     }
+                    // 切换到响应内容位置
                     layoutManager.scrollToPositionWithOffset(position + bindingView.xrvWan.getCustomTopItemViewCount(), 0);
                     RxBus.getDefault().post(RxCodeConstants.FIND_CUSTOM, position);
                 }
@@ -123,6 +131,7 @@ public class TreeFragment extends BaseFragment<TreeViewModel, FragmentWanAndroid
     }
 
     private void getTree() {
+        // viewModel.getTree()获取数据，再observe自动更新
         viewModel.getTree().observe(this, new androidx.lifecycle.Observer<TreeBean>() {
             @Override
             public void onChanged(@Nullable TreeBean treeBean) {
@@ -135,7 +144,7 @@ public class TreeFragment extends BaseFragment<TreeViewModel, FragmentWanAndroid
                         && treeBean.getData().size() > 0) {
 
                     if (mTreeAdapter.getItemCount() == 0) {
-                        DataUtil.putTreeData(activity, treeBean);
+                        DataUtil.putTreeData(activity, treeBean); //保存知识体系数据
                     }
                     mTreeAdapter.setNewData(treeBean.getData());
                     bindingView.xrvWan.loadMoreComplete();

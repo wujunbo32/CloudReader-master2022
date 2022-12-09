@@ -31,8 +31,8 @@ public class RxBus {
         }
         return mDefaultInstance;
     }
-
-    private final Subject<Object> _bus = PublishSubject.create().toSerialized();
+    // 主题
+    private final Subject<Object> _bus = PublishSubject.create().toSerialized();// PublishSubject只会把在订阅发生的时间点之后来自原始Observable的数据发射给观察者
 
     public void send(Object o) {
         _bus.onNext(o);
@@ -54,6 +54,7 @@ public class RxBus {
     }
 
     /**
+     * 发送
      * 提供了一个新的事件,根据code进行分发
      *
      * @param code 事件code

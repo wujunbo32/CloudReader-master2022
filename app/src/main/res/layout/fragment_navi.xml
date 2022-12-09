@@ -8,6 +8,10 @@
         android:orientation="horizontal">
 
         <!--滑动置顶边距只支持paddingLeft，不然会显示屏幕等宽-->
+        <!--为什么要占全屏
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+        TODO problem-->
         <me.jingbin.library.ByRecyclerView
             android:id="@+id/xrv_navi_detail"
             android:layout_width="match_parent"

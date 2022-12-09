@@ -22,23 +22,24 @@ class WanCenterFragment : BaseFragment<NoViewModel, FragmentContentBinding>(), C
     override fun onResume() {
         super.onResume()
         if (mIsFirst) {
-            showLoading()
+            showLoading()  // 显示加载状态
             val pagerAdapter = CommonTabPagerAdapter(childFragmentManager, listOf("发现", "体系", "导航"))
             pagerAdapter.listener = this
             bindingView.vpGank.adapter = pagerAdapter
             bindingView.vpGank.offscreenPageLimit = 2
-            pagerAdapter.notifyDataSetChanged()
+            pagerAdapter.notifyDataSetChanged()   // TODO 为啥要更新
             bindingView.tabGank.setupWithViewPager(bindingView.vpGank)
-            showContentView()
+            showContentView()  // 加载完成的状态
             mIsFirst = false
         }
     }
 
+    // 用于CommonTabPagerAdapter绑定 fragment
     override fun getFragment(position: Int): Fragment? =
             when (position) {
-                0 -> WanFindFragment.newInstance()
-                1 -> TreeFragment.newInstance()
-                2 -> NavigationFragment.newInstance()
+                0 -> WanFindFragment.newInstance()  // 发现
+                1 -> TreeFragment.newInstance()    // 体系
+                2 -> NavigationFragment.newInstance()   // 导航
                 else -> NavigationFragment.newInstance()
             }
 }

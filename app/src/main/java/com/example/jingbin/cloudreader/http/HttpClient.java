@@ -234,7 +234,7 @@ public interface HttpClient {
 
     /**
      * 体系数据
-     * 第二个图标 体系
+     * 第二个图标 体系   第三个图标也用这个
      */
     @GET("tree/json")
     Observable<TreeBean> getTree();

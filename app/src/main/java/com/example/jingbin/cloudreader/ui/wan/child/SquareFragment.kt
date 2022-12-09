@@ -49,9 +49,9 @@ class SquareFragment : BaseFragment<WanCenterViewModel, FragmentSquareBinding>()
         super.onResume()
         if (isFirst) {
             showLoading()  //显示加载中状态
-            initRv()  // 上下拉 悬浮按钮
+            initRv()  // 上下拉 悬浮按钮（分享文章）
             getWendaData()  // 获取广场列表数据
-            initRxBus()
+            initRxBus()   // getWendaData更新数据 但是没见到哪里取消注册
             isFirst = false    // 只执行一次
         }
     }
@@ -109,13 +109,14 @@ class SquareFragment : BaseFragment<WanCenterViewModel, FragmentSquareBinding>()
         getWendaData()
     }
 
+    // 这里没有取消注册把 TODO
     private fun initRxBus() {
-        val subscribe = RxBus.getDefault().toObservable(RxCodeConstants.REFRESH_SQUARE_DATA, RxBusBaseMessage::class.java)
+        val subscribe = RxBus.getDefault().toObservable(RxCodeConstants.REFRESH_SQUARE_DATA, RxBusBaseMessage::class.java)  // 刷新广场数据
                 .subscribe(Consumer {
                     showLoading()
                     viewModel.mPage = 0
                     getWendaData()
                 })
-        addSubscription(subscribe)
+        addSubscription(subscribe)  // 是这个管理了RxBus在onDestroy的取消注册吗 TODO
     }
 }
